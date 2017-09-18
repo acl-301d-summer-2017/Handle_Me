@@ -1,0 +1,22 @@
+{
+  "name": "handle_me",
+  "version": "1.0.0",
+  "description": "-[Team Name](#team-name) -[Team Members](#team-members) -[Problem/Solutions](#problem-solution) -[Object Model](#object-model) -[User Stories](#user-stories) -[Production Backlog](#production-backlog) -[To-Do](#to-do)",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TEAM-KRaMM/Handle_Me.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TEAM-KRaMM/Handle_Me/issues"
+  },
+  "homepage": "https://github.com/TEAM-KRaMM/Handle_Me#readme",
+  "dependencies": {
+    "express": "^4.15.4"
+  }
+}
