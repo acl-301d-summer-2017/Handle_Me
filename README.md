@@ -55,3 +55,7 @@ Dev:
 4. Routes for single page
 5. Drag in slot architecture
 6. Username avalibility check 
+
+Semi Strecth Goals:
+random questions - not always the same three questions 
+- having questions come up one at a time - clicking through the optional ones 
