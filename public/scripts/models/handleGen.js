@@ -11,10 +11,10 @@ var app = app || {};
   console.log(values);
   $('Form').submit(function() {
     event.preventDefault()
-    app.view.showGen()
     $.each($('Form').serializeArray(), function(i, field) {
-      values.push(field.value);
-  });
+      values.push(field.value) 
+      console.log("values",values)
+  })
     
     values.forEach(function(each){
       console.log(each)
@@ -23,6 +23,7 @@ var app = app || {};
       }
     });
     
+   // app.words.requestWords(app.words.populateSlots)
 
 });
 
