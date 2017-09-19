@@ -13,6 +13,7 @@ let app = {};
 words.genArray = []
 
 let answersArray = ['sl=bird','rel_trg=tiny','rel_trg=pig']
+
   words.requestWords = function (callback){
     answersArray.forEach(function(value){
       $.get('/datamuse/api/' + value)
@@ -25,6 +26,7 @@ let answersArray = ['sl=bird','rel_trg=tiny','rel_trg=pig']
       //.then (callback);
   }
 
+  $.get
 
   module.words = words
 
