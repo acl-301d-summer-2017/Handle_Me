@@ -6,8 +6,6 @@ let app = {};
 
   const words = {};
   
-  words.all = [];
-  
   words.formResult = []
   var values = [];
   console.log(values);
@@ -30,16 +28,19 @@ let app = {};
   // this array will contain 3 arrays of data from API
   words.genArray = []
 
+  //Three words appended to slots
+  words.slotArray = [];
+
 
  words.answersArray = []
- words.presetAnswer = ['sl=bird','rel_trg=tiny','rel_trg=pig']
+//  words.presetAnswer = ['sl=bird','rel_trg=tiny','rel_trg=pig']
 
 
   words.requestWords = function (callback){
     console.log("answersArray",words.answersArray)
     console.log("presetAnswer",words.presetAnswer)
     words.genArray = [];
-    words.answersAnswer.forEach(function(value){
+    words.answersArray.forEach(function(value){
       $.get('/datamuse/api/' + value)
         .then ( function(data) {
         //Clear existing genArray before repopulating
@@ -53,20 +54,18 @@ let app = {};
 
   //Takes object of all possible words for all three slots. Returns an array containing a randomly selected word for each slot
   words.randomizeAll = function () {
-    let wordArray = [];
     app.words.genArray.forEach(function(array){
       //Convert string to valid array
       let possibleWords = JSON.parse(array.body);
       let randomNumber = Math.floor(Math.random() * possibleWords.length);
-      wordArray.push(possibleWords[randomNumber].word);
+      words.slotArray.push(possibleWords[randomNumber].word);
     });
-    console.log('your words are',wordArray);
-    return wordArray;
+    console.log('your words are', words.slotArray);
   }
 
-  // append our wordArray to the DOM
-  words.appendWords = function ( wordArray ) {
-    wordArray.forEach( function ( arrayEle, currentIndex, array) {
+  // append our words.slotArray to the DOM
+  words.appendWords = function () {
+    words.slotArray.forEach( function ( arrayEle, currentIndex, array) {
       let idName = "slot" + (currentIndex+1);
       $( '#' + idName).text(arrayEle);
     });
