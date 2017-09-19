@@ -1,6 +1,6 @@
 'use strict';
 
-let app = {};
+var app = app || {};
 
 (function (module){
 
@@ -11,6 +11,7 @@ let app = {};
   console.log(values);
   $('Form').submit(function() {
     event.preventDefault()
+    app.view.showGen()
     $.each($('Form').serializeArray(), function(i, field) {
       values.push(field.value);
   });
