@@ -31,8 +31,11 @@ let app = {};
 words.genArray = []
 
  words.answersArray = []
+ words.presetAnswer = ['sl=bird','rel_trg=tiny','rel_trg=pig']
 
   words.requestWords = function (callback){
+    console.log("answersArray",words.answersArray)
+    console.log("presetAnswer",words.presetAnswer)
     words.answersArray.forEach(function(value){
       $.get('/datamuse/api/' + value)
         .then ( function(data) {
