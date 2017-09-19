@@ -20,7 +20,7 @@ let answersArray = ['sl=bird','rel_trg=tiny','rel_trg=pig']
         .then ( function(data) {
         console.log("data:",data)
         words.genArray.push(data)
-        console.log("genArray:",genArray);
+        console.log("genArray:",words.genArray);
         })
     })
       //.then (callback);
