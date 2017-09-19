@@ -8,7 +8,7 @@
 <body>
 
   <!--          Survey Section          -->
-  <section class="hide-survey">
+  <section class="hide survey">
 
     <h1>Handle Me Survey</h1>
 
@@ -17,29 +17,29 @@
         Chose your favorite topic:<br>
         <select name="Favorite Topic">
             <option value="" disabled selected>Select Your Option</option>
-            <option value="sports">Sports</option>
-            <option value="science">Science</option>
-            <option value="nature">Nature</option>
-            <option value="art">Art</option>
-            <option value="food">Food</option>
+            <option value="sl=sports">Sports</option>
+            <option value="sl=science">Science</option>
+            <option value="sl=nature">Nature</option>
+            <option value="sl=art">Art</option>
+            <option value="sl=food">Food</option>
         </select><br>
         Chose your current mood:<br>
         <select name="Current Mood">
             <option value="" disabled selected>Select Your Option</option>
-            <option value="blissful">Blissful</option>
-            <option value="curious">Curious</option>
-            <option value="blah">Blah</option>
-            <option value="weird">Weird</option>
-            <option value="chilled">Chilled</option>
+            <option value="rel_trg=blissful">Blissful</option>
+            <option value="rel_trg=curious">Curious</option>
+            <option value="rel_trg=blah">Blah</option>
+            <option value="rel_trg=weird">Weird</option>
+            <option value="rel_trg=chilled">Chilled</option>
         </select><br>
         How would your friends describe you:<br>
         <select name="Personality Trait">
             <option value="" disabled selected>Select Your Option</option>
-            <option value="devious">Devious</option>
-            <option value="complacent">Complacent</option>
-            <option value="bouncy">Bouncy</option>
-            <option value="nerdy">Nerdy</option>
-            <option value="anxious">Anxious</option>
+            <option value="rel_trg=devious">Devious</option>
+            <option value="rel_trg=complacent">Complacent</option>
+            <option value="rel_trg=bouncy">Bouncy</option>
+            <option value="rel_trg=nerdy">Nerdy</option>
+            <option value="rel_trg=anxious">Anxious</option>
         </select><br>
         First Name:<br>
         <input type="text" name="firstname" placeholder="Optional"><br>
@@ -48,12 +48,13 @@
         <input type="number" name="favoritenumber" placeholder="Optional"><br>
         <input id ="survey-submit" type="submit" placeholder="Submit">
 
+
     </form>
   </section>
 
   <!--         Generator Slots Section          -->
 
-  <section class="hide-generator">
+  <section class="hide generator">
     <h1>Your Handle!</h1>
 
     <h3 class="slots">
@@ -66,10 +67,10 @@
       <span id="like">I like it!</span>
     </div>
   </section>
-
   <script src="vendor/vendorScripts/jquery-3.2.1.js"></script>
   <script src="scripts/models/handleGen.js"></script>
   <script src="scripts/views/handleGenView.js"></script>
+  <script> $('.generator').hide()</script>
 </body>
 <footer>
     &copy; 2017 Alchemy Code Lab | Handle Me | Team KRaMM
