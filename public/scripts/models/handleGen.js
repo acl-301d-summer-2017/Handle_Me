@@ -1,6 +1,6 @@
 'use strict';
 
-let app = app || {};
+let app = {};
 
 (function (module){
 
@@ -8,27 +8,21 @@ let app = app || {};
   
   words.all = [];
 
-  app.answer = {answer: actualAnswer, category: actualCategory}
-
-  actualAnswer = formReply
-
-
-// array of contatenated category and answer pairs from the user submited form
-
 
 // this array will contain 3 arrays of data from API
 words.genArray = []
 
+let answersArray = ['sl=bird','rel_trg=tiny','rel_trg=pig']
   words.requestWords = function (callback){
-    app.answersArray.forEach(function(value){
+    answersArray.forEach(function(value){
       $.get('/datamuse/api/' + value)
         .then ( function(data) {
-        console.log(data)
+        console.log("data:",data)
         words.genArray.push(data)
-        console.log(genArray);
+        console.log("genArray:",genArray);
         })
     })
-      .then (callback);
+      //.then (callback);
   }
 
 

@@ -2,11 +2,11 @@
 
 
 const express = require('express');
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4000;
 const app = express();
-app.use(express.static('./public'));
-app.listen(PORT, () => console.log(`Server started on port ${PORT}!`));
 const requestProxy = require('express-request-proxy');
+app.use(express.static('./public'));
+
 
 //calls requestProxy used in app.get
  function getDatamuse (request, response) {
@@ -16,5 +16,7 @@ const requestProxy = require('express-request-proxy');
   })) (request,response)
 }
 
-app.get("datamuse/api/*", getDatamuse )
 
+app.get("/datamuse/*", getDatamuse )
+
+app.listen(PORT, () => console.log(`Server started on port ${PORT}!`));
