@@ -26,16 +26,17 @@ let answersArray = ['sl=bird','rel_trg=tiny','rel_trg=pig']
       //.then (callback);
   }
 
-  //Takes object of all possible words for all three slots. Returns a randomly selected word for each slot
-  words.randomizeAll = function (){
-
+  //Takes object of all possible words for all three slots. Returns an array containing a randomly selected word for each slot
+  words.randomizeAll = function () {
+    let wordArray = [];
     app.words.genArray.forEach(function(array){
-      let possibleWords = JSON.parse(app.words.genArray[array].body);
-
+      //Convert string to valid array
+      let possibleWords = JSON.parse(array.body);
+      let randomNumber = Math.floor(Math.random() * possibleWords.length);
+      wordArray.push(possibleWords[randomNumber]);
     });
-
-
-
+    console.log('your words are',wordArray);
+    return wordArray;
   }
 
   module.words = words
