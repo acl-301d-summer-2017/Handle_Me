@@ -26,7 +26,17 @@ let answersArray = ['sl=bird','rel_trg=tiny','rel_trg=pig']
       //.then (callback);
   }
 
-  $.get
+  //Takes object of all possible words for all three slots. Returns a randomly selected word for each slot
+  words.randomizeAll = function (){
+
+    app.words.genArray.forEach(function(array){
+      let possibleWords = JSON.parse(app.words.genArray[array].body);
+
+    });
+
+
+
+  }
 
   module.words = words
 
