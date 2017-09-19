@@ -1,1 +1,55 @@
 <!DOCTYPE html>
+<html>
+<head>
+    <title>Handle Me</title>
+
+</head>
+
+<body>
+<h1>Handle Me Survey</h1>
+
+<form>
+    
+    Chose your favorite topic:<br>
+    <select name="Favorite Topic">
+        <option value="" disabled selected>Select Your Option</option>
+        <option value="sports">Sports</option>
+        <option value="science">Science</option>
+        <option value="nature">Nature</option>
+        <option value="art">Art</option>
+        <option value="food">Food</option>
+    </select><br>
+    Chose your current mood:<br>
+    <select name="Current Mood">
+        <option value="" disabled selected>Select Your Option</option>
+        <option value="blissful">Blissful</option>
+        <option value="curious">Curious</option>
+        <option value="blah">Blah</option>
+        <option value="weird">Weird</option>
+        <option value="chilled">Chilled</option>
+    </select><br>
+    How would your friends describe you:<br>
+    <select name="Personality Trait">
+        <option value="" disabled selected>Select Your Option</option>
+        <option value="devious">Devious</option>
+        <option value="complacent">Complacent</option>
+        <option value="bouncy">Bouncy</option>
+        <option value="nerdy">Nerdy</option>
+        <option value="anxious">Anxious</option>
+    </select><br>
+    First Name:<br>
+    <input type="text" name="firstname" placeholder="Optional"><br>
+
+    Favorite Number:<br>
+    <input type="number" name="favoritenumber" placeholder="Optional"><br>
+    <input type="submit" placeholder="Submit">
+
+</form>
+
+  <script src="vendor/vendorScripts/jquery-3.2.1.js"></script>
+  <script src="scripts/models/handleGen.js"></script>
+</body>
+<footer>
+    &copy; 2017 Alchemy Code Lab | Handle Me | Team KRaMM
+  </footer>
+</html>
