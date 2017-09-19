@@ -19,8 +19,6 @@ app.use(express.static('./public'));
     
  
 }
-
-
 app.get("/datamuse/api/*", getDatamuse);
 
 
