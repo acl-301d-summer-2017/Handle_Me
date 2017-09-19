@@ -38,11 +38,11 @@ let app = {};
   words.requestWords = function (callback){
     console.log("answersArray",words.answersArray)
     console.log("presetAnswer",words.presetAnswer)
-    words.answersArray.forEach(function(value){
+    words.genArray = [];
+    words.answersAnswer.forEach(function(value){
       $.get('/datamuse/api/' + value)
         .then ( function(data) {
         //Clear existing genArray before repopulating
-        words.genArray = [];
         console.log("data:",data);
         words.genArray.push(data);
         console.log("genArray:",words.genArray);
