@@ -37,10 +37,13 @@ var app = app || {};
 //  words.presetAnswer = ['sl=bird','rel_trg=tiny','rel_trg=pig']
 
 
+
   words.requestWords = function (callback){
     console.log("answersArray",words.answersArray)
     console.log("presetAnswer",words.presetAnswer)
     words.genArray = [];
+    
+
     words.answersArray.forEach(function(value){
       $.get('/datamuse/api/' + value)
         .then ( function(data) {
@@ -48,10 +51,12 @@ var app = app || {};
         console.log("data:",data);
         words.genArray.push(data);
         console.log("genArray:",words.genArray);
+        
+        if(words.genArray.length===3 ) { callback()};
         })
-    })
-      //.then (callback);
-  }
+     })
+   }
+
 
   //Takes object of all possible words for all three slots. Returns an array containing a randomly selected word for each slot
   words.randomizeAll = function () {
@@ -72,6 +77,15 @@ var app = app || {};
     });
   }
 
+
+  words.populateSlots = function() {
+    words.randomizeAll()
+    words.appendWords()
+  }
+
   module.words = words
 
 })(app);
+
+
+
