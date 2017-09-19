@@ -7,15 +7,33 @@ let app = {};
   const words = {};
   
   words.all = [];
+  
+  words.formResult = []
+  var values = [];
+  console.log(values);
+  $('Form').submit(function() {
+    event.preventDefault()
+    $.each($('Form').serializeArray(), function(i, field) {
+      values.push(field.value);
+  });
+    
+    values.forEach(function(each){
+      console.log(each)
+      if(each){
+        words.answersArray.push(each)
+      }
+    });
+    
 
+});
 
 // this array will contain 3 arrays of data from API
 words.genArray = []
 
-let answersArray = ['sl=bird','rel_trg=tiny','rel_trg=pig']
+ words.answersArray = []
 
   words.requestWords = function (callback){
-    answersArray.forEach(function(value){
+    words.answersArray.forEach(function(value){
       $.get('/datamuse/api/' + value)
         .then ( function(data) {
         console.log("data:",data)
