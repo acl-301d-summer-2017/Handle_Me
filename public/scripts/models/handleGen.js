@@ -19,6 +19,7 @@ let answersArray = ['sl=bird','rel_trg=tiny','rel_trg=pig']
       $.get('/datamuse/api/' + value)
         .then ( function(data) {
         console.log("data:",data)
+        // TODO: refactor to clear genArray prior to populating
         words.genArray.push(data)
         console.log("genArray:",words.genArray);
         })
@@ -33,11 +34,13 @@ let answersArray = ['sl=bird','rel_trg=tiny','rel_trg=pig']
       //Convert string to valid array
       let possibleWords = JSON.parse(array.body);
       let randomNumber = Math.floor(Math.random() * possibleWords.length);
-      wordArray.push(possibleWords[randomNumber]);
+      wordArray.push(possibleWords[randomNumber].word);
     });
     console.log('your words are',wordArray);
     return wordArray;
   }
+
+
 
   module.words = words
 
