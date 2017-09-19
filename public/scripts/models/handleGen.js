@@ -1,6 +1,6 @@
 'use strict';
 
-let app = {};
+var app = app || {};
 
 (function (module){
 
@@ -12,8 +12,9 @@ let app = {};
   $('Form').submit(function() {
     event.preventDefault()
     $.each($('Form').serializeArray(), function(i, field) {
-      values.push(field.value);
-  });
+      values.push(field.value) 
+      console.log("values",values)
+  })
     
     values.forEach(function(each){
       console.log(each)
@@ -22,6 +23,7 @@ let app = {};
       }
     });
     
+   // app.words.requestWords(app.words.populateSlots)
 
 });
 
