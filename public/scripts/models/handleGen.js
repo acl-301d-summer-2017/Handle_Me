@@ -40,7 +40,13 @@ let answersArray = ['sl=bird','rel_trg=tiny','rel_trg=pig']
     return wordArray;
   }
 
-
+// append our wordArray to the DOM
+words.appendWords = function ( wordArray ) {
+  wordArray.forEach( function ( arrayEle, currentIndex, array) {
+    let idName = "slot" + (currentIndex+1);
+    $( '#' + idName).text(arrayEle);
+  });
+}
 
   module.words = words
 
