@@ -12,8 +12,6 @@ var app = app || {};
 
   }
 
-  
-  
 module.surveyView = surveyView
 
 })(app);

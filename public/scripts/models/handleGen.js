@@ -4,40 +4,58 @@ var app = app || {};
 
 (function (module){
 
+
+
+  $(".about").click(function(){
+    console.log("wokrs")
+  });
+
+
+
+  //Gets results from the form
   const words = {};
-  
+
+  //Stores results from form
   words.formResult = []
-  var values = [];
+
+  //Stores current handle as a concatinated string
+  words.currentHandle = '';
+
+  let values = [];
   $('Form').submit(function() {
       event.preventDefault()
+      //For each form entry, push its value into values array
       $.each($('Form').serializeArray(), function(i, field) {
         values.push(field.value) 
       })
     
-    values.forEach(function(each){
-      if(each){
-        words.answersArray.push(each)
-      }
-    });
-    page('/gen');
-});
+      //Eliminate empty string entries
+      values.forEach(function(each){
+        if(each){
+          words.answersArray.push(each)
+        }
+      });
+
+      //Initiates the routes
+      page('/gen');
+  });
 
 
 
   // this array will contain 3 arrays of data from API
   words.genArray = []
 
-// Array of values from the survey submited by the user 
- words.answersArray = []
+  // Array of values from the survey submited by the user 
+  words.answersArray = []
 
-
-
+  //Gets large word objects from datamuse api
   words.requestWords = function (callback){
     words.genArray = [];
     words.answersArray.forEach(function(value){
       $.get('/datamuse/api/' + value)
         .then ( function(data) {
         words.genArray.push(data);
+        //Possible TODO: make this scalable to number of slots
         if (words.genArray.length === 3 ) {
           callback(); 
           }
@@ -64,10 +82,10 @@ var app = app || {};
   
   // API 2
 
-  words.currentHandle = "realDonald"
   words.availability = '';
 
-  words.CheckApi = function(){
+
+  words.checkTwit = function(){
     $.get('/twit/' + words.currentHandle)
           .then ( function(data) {
             console.log(data)
@@ -76,9 +94,22 @@ var app = app || {};
        })
      }
 
+  words.checkInst = function(){
+    $.get('/inst/' + words.currentHandle)
+      .then ( function(data) {
+      data.statusCode === 404 ? words.instStatus =  "availible!" :  words.instStatus = "taken :(";
+      console.log('words.instStatus:',words.currentHandle,words.instStatus)
+      })
+  }
+  
 
-
-
+  words.checkGit = function(){
+    $.get('/git/' + words.currentHandle)
+      .then ( function(data) {
+        JSON.parse(data.body).message == "Not Found" ? words.instStatus =  "availible!" :  words.instStatus = "taken :(";
+      console.log('words.instStatus:',words.currentHandle,words.instStatus)
+      })
+  }
 
   module.words = words
 
