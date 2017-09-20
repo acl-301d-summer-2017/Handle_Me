@@ -22,8 +22,17 @@ var app = app || {};
   // append our app.words.slotArray to the DOM
   genView.appendWords = function () {
     app.words.slotArray.forEach( function ( arrayEle, currentIndex, array) {
-      let idName = "slot" + (currentIndex+1);
-      $( '#' + idName).text(arrayEle);
+      let idName = '#slot' + (currentIndex+1);
+
+      if ( $(idName).attr('data-saved') !== 'true' ) { $(idName).text(arrayEle); }
+
+      //Update currentHandle with current displayed handle
+      app.words.currentHandle = '';
+      for (let i = 0; i < $('.slots').children().length; i++){
+        app.words.currentHandle += $('.slots').children().eq(i).text();
+        //TODO: refactor to accomodate concationation options
+      }
+
     });
   }
 
