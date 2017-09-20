@@ -34,6 +34,7 @@ var app = app || {};
       }
 
       //Add event listener to toggle "data-saved" status
+      $(idName).off('click');
       $(idName).on('click',function(){
         $(idName).attr('data-saved') === 'true' ? $(idName).attr('data-saved', false) : $(idName).attr('data-saved', true); 
         console.log(idName,'is clicked. data-saved value is',$(idName).attr('data-saved'))
