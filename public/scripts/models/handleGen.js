@@ -64,22 +64,17 @@ var app = app || {};
   
   // API 2
 
-  words.selectedHandle = "realDonald"
+  words.currentHandle = "realDonald"
   words.availability = '';
 
   words.CheckApi = function(){
-    $.get('/twit/' + words.selectedHandle)
+    $.get('/twit/' + words.currentHandle)
           .then ( function(data) {
             console.log(data)
           words.availability = JSON.parse(data.body).reason;
-          console.log('words.availability:',words.availability)
+          console.log('words.availability:',words.currentHandle,words.availability)
        })
      }
-  
-
-
-
-
 
 
 
