@@ -25,10 +25,7 @@ var app = app || {};
     page('/gen');
 });
 
-//  This function will repopulate slots when user clicks re-roll button
-  $("#re-roll").click(function(){
-    app.words.populateSlots()
-  });
+
 
   // this array will contain 3 arrays of data from API
   words.genArray = []
@@ -38,7 +35,7 @@ var app = app || {};
 
 
 
-  words.requestWords = function (){
+  words.requestWords = function (callback){
     console.log("answersArray",words.answersArray.length)
     words.genArray = [];
     words.answersArray.forEach(function(value){
@@ -51,7 +48,7 @@ var app = app || {};
         console.log("genArray:",words.genArray);
         
         if (words.genArray.length === 3 ) {
-           app.words.populateSlots(); 
+          callback(); 
           }
         })
      })
@@ -74,19 +71,8 @@ var app = app || {};
     console.log('your words are', words.slotArray);
   }
 
-  // append our words.slotArray to the DOM
-  words.appendWords = function () {
-    words.slotArray.forEach( function ( arrayEle, currentIndex, array) {
-      let idName = "slot" + (currentIndex+1);
-      $( '#' + idName).text(arrayEle);
-    });
-  }
-
-
-  words.populateSlots = function() {
-    words.randomizeAll()
-    words.appendWords()
-  }
+  
+ 
 
   module.words = words
 

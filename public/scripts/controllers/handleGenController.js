@@ -3,16 +3,13 @@
 var app = app || {};
 
 (function (module){
-    const control = {};
+  const control = {};
 
     
-    control.init = function () { 
-      console.log("running init")
-      $('.survey').hide();
-      $('.generator').show();
-      app.words.requestWords() 
-     }
+  control.init = function () { 
+    app.words.requestWords(app.view.init) 
+  }
 
-    module.control = control;
+  module.control = control;
 
 })(app);
