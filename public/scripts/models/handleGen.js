@@ -25,15 +25,16 @@ var app = app || {};
     page('/gen');
 });
 
+//  This function will repopulate slots when user clicks re-roll button
+  $("#re-roll").click(function(){
+    app.words.populateSlots()
+  });
+
   // this array will contain 3 arrays of data from API
   words.genArray = []
 
-  //Three words appended to slots
-  words.slotArray = [];
-
-
+// Array of values from the survey submited by the user 
  words.answersArray = []
-//  words.presetAnswer = ['sl=bird','rel_trg=tiny','rel_trg=pig']
 
 
 
@@ -57,8 +58,13 @@ var app = app || {};
    }
 
 
+  //Array of three words appended to slots
+  words.slotArray = [];
+
   //Takes object of all possible words for all three slots. Returns an array containing a randomly selected word for each slot
   words.randomizeAll = function () {
+    //resets words.slotArray to empty string so it can be repopulated when re-rolling the Generator
+    words.slotArray.length=0;
     app.words.genArray.forEach(function(array){
       //Convert string to valid array
       let possibleWords = JSON.parse(array.body);
