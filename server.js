@@ -16,10 +16,16 @@ app.use(express.static('./public'));
     request.get({url:`https://api.datamuse.com/words?${req.params[0]}`}, function(err,response){
       res.send(response)
     })
-    
- 
+}
+
+function getTwit (req, res){
+  console.log( 'Routing Twit request for', req.params[0] );
+  request.get({url:`https://twitter.com/users/username_available?username=${req.params[0]}`}, function(err,response){
+    res.send(response)
+  })
 }
 app.get("/datamuse/api/*", getDatamuse);
 
+app.get("/twit/*", getTwit);
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}!`));

@@ -62,7 +62,28 @@ var app = app || {};
   }
 
   
- 
+  // API 2
+
+  words.selectedHandle = "realDonald"
+  words.availability = '';
+
+  words.CheckApi = function(){
+    $.get('/twit/' + words.selectedHandle)
+          .then ( function(data) {
+            console.log(data)
+          words.availability = JSON.parse(data.body).reason;
+          console.log('words.availability:',words.availability)
+       })
+     }
+  
+
+
+
+
+
+
+
+
 
   module.words = words
 
