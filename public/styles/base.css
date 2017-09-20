@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Bangers);
+
 body{
     text-align: center;
     margin: 0 auto;
@@ -17,8 +19,22 @@ form{
     margin: 0 auto;
 }
 
-h1{
-    font-size: 300%;
+@-webkit-keyframes typing { from { width: 0; } }
+@-webkit-keyframes blink-caret { 50% { border-color: transparent; } }
+
+h1 { 
+	font: bold 2em monospace;
+    color: black;
+	border-right: .1em solid black;
+	width: calc(0.55em * 14); 
+	width: 16ch;
+	white-space: nowrap;
+	overflow: hidden;
+	-webkit-animation: typing 2s steps(14, end), blink-caret .5s step-end infinite alternate;
+    font-size: 400%;
+    font-family: 'Bangers';
+    letter-spacing: 5px;
+    margin: 0 auto;
 }
 
 label{
