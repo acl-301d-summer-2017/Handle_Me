@@ -18,12 +18,6 @@ var app = app || {};
     app.genView.populateSlots()
   });
 
-  //TODO: event listener for slot saving
-  $('#slot1').on('click', function(){
-     //Toggle data-saved attribute
-     $('#slot1').attr('data-saved') === 'true' ? $('#slot1').attr('data-saved', false) : $('#slot1').attr('data-saved', true); 
-  });
-
 
   // append our app.words.slotArray to the DOM
   genView.appendWords = function () {
@@ -38,6 +32,11 @@ var app = app || {};
         app.words.currentHandle += $('.slots').children().eq(i).text();
         //TODO: refactor to accomodate concationation options
       }
+
+      //Add event listener to toggle "data-saved" status
+      $(idName).on('click',function(){
+        $(idName).attr('data-saved') === 'true' ? $(idName).attr('data-saved', false) : $(idName).attr('data-saved', true); 
+        })
 
     });
   }
