@@ -30,7 +30,13 @@ var app = app || {};
       //Update currentHandle with current displayed handle
       app.words.currentHandle = '';
       for (let i = 0; i < $('.slots').children().length; i++){
-        app.words.currentHandle += $('.slots').children().eq(i).text();
+        if (app.words.currentHandle === ''){
+          app.words.currentHandle += $('.slots').children().eq(i).text();
+        } else {
+          app.words.currentHandle += '-';
+          app.words.currentHandle += $('.slots').children().eq(i).text();
+        }
+        
         //TODO: refactor to accomodate concationation options
       }
 
