@@ -33,8 +33,7 @@ var app = app || {};
         if (app.words.currentHandle === ''){
           app.words.currentHandle += $('.slots').children().eq(i).text();
         } else {
-          app.words.currentHandle += '-';
-          app.words.currentHandle += $('.slots').children().eq(i).text();
+          app.words.currentHandle += '-' + $('.slots').children().eq(i).text();
         }
         
         //TODO: refactor to accomodate concationation options
