@@ -4,10 +4,15 @@ var app = app || {};
 
 (function (module){
 
-  const words = {};
   //Gets results from the form
-  words.formResult = []
+  const words = {};
+
   //Stores results from form
+  words.formResult = []
+
+  //Stores current handle as a concatinated string
+  words.currentHandle = '';
+
   let values = [];
   $('Form').submit(function() {
       event.preventDefault()
