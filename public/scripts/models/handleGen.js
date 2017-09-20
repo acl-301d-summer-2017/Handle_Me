@@ -10,11 +10,11 @@ var app = app || {};
   var values = [];
   console.log(values);
   $('Form').submit(function() {
-    event.preventDefault()
-    $.each($('Form').serializeArray(), function(i, field) {
-      values.push(field.value) 
-      console.log("values",values)
-  })
+      event.preventDefault()
+      $.each($('Form').serializeArray(), function(i, field) {
+        values.push(field.value) 
+        console.log("values",values)
+      })
     
     values.forEach(function(each){
       console.log(each)
@@ -22,9 +22,7 @@ var app = app || {};
         words.answersArray.push(each)
       }
     });
-    
-   // app.words.requestWords(app.words.populateSlots)
-
+    page('/gen');
 });
 
   // this array will contain 3 arrays of data from API
@@ -40,11 +38,10 @@ var app = app || {};
 
 
   words.requestWords = function (){
-    console.log("answersArray",words.answersArray)
+    console.log("answersArray",words.answersArray.length)
     words.genArray = [];
-    
-
     words.answersArray.forEach(function(value){
+      console.log('inside for each')
       $.get('/datamuse/api/' + value)
         .then ( function(data) {
         //Clear existing genArray before repopulating

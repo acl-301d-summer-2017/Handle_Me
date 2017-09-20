@@ -5,9 +5,13 @@ var app = app || {};
 (function (module){
     const control = {};
 
-    control.init = function () {
-        app.words.requestWords();    
-    }
+    
+    control.init = function () { 
+      console.log("running init")
+      $('.survey').hide();
+      $('.generator').show();
+      app.words.requestWords() 
+     }
 
     module.control = control;
 

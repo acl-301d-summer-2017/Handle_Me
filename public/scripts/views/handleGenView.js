@@ -6,11 +6,9 @@ var app = app || {};
 
   const view= {};
   
-  $('#survey-submit').click(function(){
-    page('/gen');
-    $('.survey').hide();
-    $('.generator').show();
-})
+//   $('#survey-submit').click(function(){
+   
+// })
 
 
 module.view = view
