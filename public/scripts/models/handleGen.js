@@ -5,39 +5,44 @@ var app = app || {};
 (function (module){
 
   const words = {};
-  
+  //Gets results from the form
   words.formResult = []
-  var values = [];
+  //Stores results from form
+  let values = [];
   $('Form').submit(function() {
       event.preventDefault()
+      //For each form entry, push its value into values array
       $.each($('Form').serializeArray(), function(i, field) {
         values.push(field.value) 
       })
     
-    values.forEach(function(each){
-      if(each){
-        words.answersArray.push(each)
-      }
-    });
-    page('/gen');
-});
+      //Eliminate empty string entries
+      values.forEach(function(each){
+        if(each){
+          words.answersArray.push(each)
+        }
+      });
+
+      //Initiates the routes
+      page('/gen');
+  });
 
 
 
   // this array will contain 3 arrays of data from API
   words.genArray = []
 
-// Array of values from the survey submited by the user 
- words.answersArray = []
+  // Array of values from the survey submited by the user 
+  words.answersArray = []
 
-
-
+  //Gets large word objects from datamuse api
   words.requestWords = function (callback){
     words.genArray = [];
     words.answersArray.forEach(function(value){
       $.get('/datamuse/api/' + value)
         .then ( function(data) {
         words.genArray.push(data);
+        //Possible TODO: make this scalable to number of slots
         if (words.genArray.length === 3 ) {
           callback(); 
           }
@@ -60,9 +65,6 @@ var app = app || {};
       words.slotArray.push(possibleWords[randomNumber].word);
     });
   }
-
-  
- 
 
   module.words = words
 
