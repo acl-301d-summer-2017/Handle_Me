@@ -1,8 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+
+    <meta charset="UTF-8">
+
     <title>Handle Me</title>
-    
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/styles/base.css">
+
 </head>
 
 <body>
@@ -14,7 +20,7 @@
 
     <form>
         
-        Chose your favorite topic:<br>
+        <label>Chose your favorite topic:<br> </label>
         <select name="Favorite Topic">
             <option value="" disabled selected>Select Your Option</option>
             <option value="sl=sports">Sports</option>
@@ -23,7 +29,7 @@
             <option value="sl=art">Art</option>
             <option value="sl=food">Food</option>
         </select><br>
-        Chose your current mood:<br>
+        <label>Chose your current mood:<br></label>
         <select name="Current Mood">
             <option value="" disabled selected>Select Your Option</option>
             <option value="rel_trg=blissful">Blissful</option>
@@ -32,7 +38,7 @@
             <option value="rel_trg=weird">Weird</option>
             <option value="rel_trg=chilled">Chilled</option>
         </select><br>
-        How would your friends describe you:<br>
+        <label>How would your friends describe you:<br></label>
         <select name="Personality Trait">
             <option value="" disabled selected>Select Your Option</option>
             <option value="rel_trg=devious">Devious</option>
@@ -41,10 +47,10 @@
             <option value="rel_trg=nerdy">Nerdy</option>
             <option value="rel_trg=anxious">Anxious</option>
         </select><br>
-        First Name:<br>
+        <label>First Name:<br></label>
         <input type="text" name="firstname" placeholder="Optional"><br>
 
-        Favorite Number:<br>
+        <label> Favorite Number:<br> </label>
         <input type="number" name="favoritenumber" placeholder="Optional"><br>
         <input id ="survey-submit" type="submit" placeholder="Submit">
 
