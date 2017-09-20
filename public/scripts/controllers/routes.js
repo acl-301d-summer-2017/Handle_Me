@@ -1,7 +1,7 @@
 'use strict';
 var app = app || {};
 
-page('/gen', app.control.init);
+page('/gen', app.genControl.init);
 page('/', app.surveyControl.init);
 
 

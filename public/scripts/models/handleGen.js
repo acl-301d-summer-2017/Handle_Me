@@ -8,16 +8,13 @@ var app = app || {};
   
   words.formResult = []
   var values = [];
-  console.log(values);
   $('Form').submit(function() {
       event.preventDefault()
       $.each($('Form').serializeArray(), function(i, field) {
         values.push(field.value) 
-        console.log("values",values)
       })
     
     values.forEach(function(each){
-      console.log(each)
       if(each){
         words.answersArray.push(each)
       }
@@ -36,17 +33,11 @@ var app = app || {};
 
 
   words.requestWords = function (callback){
-    console.log("answersArray",words.answersArray.length)
     words.genArray = [];
     words.answersArray.forEach(function(value){
-      console.log('inside for each')
       $.get('/datamuse/api/' + value)
         .then ( function(data) {
-        //Clear existing genArray before repopulating
-        console.log("data:",data);
         words.genArray.push(data);
-        console.log("genArray:",words.genArray);
-        
         if (words.genArray.length === 3 ) {
           callback(); 
           }
@@ -68,7 +59,6 @@ var app = app || {};
       let randomNumber = Math.floor(Math.random() * possibleWords.length);
       words.slotArray.push(possibleWords[randomNumber].word);
     });
-    console.log('your words are', words.slotArray);
   }
 
   

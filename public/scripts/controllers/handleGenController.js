@@ -3,13 +3,13 @@
 var app = app || {};
 
 (function (module){
-  const control = {};
+  const genControl = {};
 
     
-  control.init = function () { 
-    app.words.requestWords(app.view.init) 
+  genControl.init = function () { 
+    app.words.requestWords(app.genView.init) 
   }
 
-  module.control = control;
+  module.genControl = genControl;
 
 })(app);

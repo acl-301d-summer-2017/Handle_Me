@@ -4,23 +4,23 @@ var app = app || {};
 
 (function (module){
 
-  const view= {};
+  const genView= {};
 
 
-  view.init = function (){
+  genView.init = function (){
   $('.survey').hide();
   $('.generator').show();
-  view.populateSlots();
+  genView.populateSlots();
   };
 
   //  This function will repopulate slots when user clicks re-roll button
   $("#re-roll").click(function(){
-    app.view.populateSlots()
+    app.genView.populateSlots()
   });
 
 
   // append our app.words.slotArray to the DOM
-  view.appendWords = function () {
+  genView.appendWords = function () {
     app.words.slotArray.forEach( function ( arrayEle, currentIndex, array) {
       let idName = "slot" + (currentIndex+1);
       $( '#' + idName).text(arrayEle);
@@ -28,12 +28,11 @@ var app = app || {};
   }
 
   // populates our slots.
-  view.populateSlots = function() {
-    console.log ("populate slots in view")
+  genView.populateSlots = function() {
     app.words.randomizeAll()
-    view.appendWords()
+    genView.appendWords()
   }
   
-module.view = view
+module.genView = genView
 
 })(app);
