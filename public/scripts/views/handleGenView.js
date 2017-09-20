@@ -8,6 +8,7 @@ var app = app || {};
 
 
   genView.init = function (){
+  $('.about').hide();  
   $('.survey').hide();
   $('.generator').show();
   genView.populateSlots();

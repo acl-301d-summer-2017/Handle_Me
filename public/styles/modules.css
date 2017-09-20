@@ -1,5 +1,28 @@
+@-webkit-keyframes typing { from { width: 0; } }
+@-webkit-keyframes blink-caret { 50% { border-color: transparent; } }
+
+#handle-survey{
+    font: bold 2em monospace;
+    color: black;
+	border-right: .1em solid black;
+	width: calc(0.55em * 14); 
+	width: 16ch;
+	white-space: nowrap;
+	overflow: hidden;
+	-webkit-animation: typing 2s steps(14, end), blink-caret .5s step-end infinite alternate;
+    font-size: 400%;
+    font-family: 'Bangers';
+    letter-spacing: 5px;
+    margin: 0 auto;
+    padding-bottom: 2%;
+}
+
 .slots{
     font-size: 350%;
+}
+
+.slots:hover{
+    cursor: pointer;
 }
 
 #slot1, #slot2, #slot3{
@@ -8,16 +31,28 @@
     padding: 1%;
 }
 
+#slot1:hover, #slot2:hover, #slot3:hover{
+    box-shadow: 4px 4px 4px rgba(0,0,0,.5);
+}
+
+#survey-submit{
+    border-radius: 25%;
+    width: 50%;
+    margin: 0 auto;
+    box-shadow: 10px 5px 5px rgba(0,0,0,.5);
+}
+
 #re-roll{
     font-size: 200%;
     border: 1px solid black;
+    background-color: white;
     margin: 0 auto;
     padding: .5%;
     border-radius: 50%; 
-    box-shadow: 0 0 20px #000;
-    cursor: default;
+    box-shadow: 10px 5px 5px rgba(0,0,0,.5);
 }
 
-footer{
-    padding: 25%;
+#re-roll:hover{
+    cursor: pointer;
+    font-size: 2.5em;
 }
