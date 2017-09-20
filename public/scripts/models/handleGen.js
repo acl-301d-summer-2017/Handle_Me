@@ -39,9 +39,8 @@ var app = app || {};
 
 
 
-  words.requestWords = function (callback){
+  words.requestWords = function (){
     console.log("answersArray",words.answersArray)
-    console.log("presetAnswer",words.presetAnswer)
     words.genArray = [];
     
 
@@ -53,7 +52,9 @@ var app = app || {};
         words.genArray.push(data);
         console.log("genArray:",words.genArray);
         
-        if(words.genArray.length===3 ) { callback()};
+        if (words.genArray.length === 3 ) {
+           app.words.populateSlots(); 
+          }
         })
      })
    }
