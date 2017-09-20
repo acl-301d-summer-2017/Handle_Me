@@ -8,6 +8,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/styles/base.css">
+    <link rel="stylesheet" href="/styles/modules.css">
 
 </head>
 
@@ -19,8 +20,7 @@
     <h1>Handle Me Survey</h1>
 
     <form>
-        
-        <label>Chose your favorite topic:<br> </label>
+        <label>Chose your favorite topic: </label>
         <select name="Favorite Topic">
             <option value="" disabled selected>Select Your Option</option>
             <option value="sl=sports">Sports</option>
@@ -29,7 +29,7 @@
             <option value="sl=art">Art</option>
             <option value="sl=food">Food</option>
         </select><br>
-        <label>Chose your current mood:<br></label>
+        <label>Chose your current mood:</label>
         <select name="Current Mood">
             <option value="" disabled selected>Select Your Option</option>
             <option value="rel_trg=blissful">Blissful</option>
@@ -38,7 +38,7 @@
             <option value="rel_trg=weird">Weird</option>
             <option value="rel_trg=chilled">Chilled</option>
         </select><br>
-        <label>How would your friends describe you:<br></label>
+        <label>How would your friends describe you:</label>
         <select name="Personality Trait">
             <option value="" disabled selected>Select Your Option</option>
             <option value="rel_trg=devious">Devious</option>
@@ -47,17 +47,17 @@
             <option value="rel_trg=nerdy">Nerdy</option>
             <option value="rel_trg=anxious">Anxious</option>
         </select><br>
-        <label>First Name:<br></label>
+        <label>First Name:</label>
         <input type="text" name="firstname" placeholder="Optional"><br>
 
-        <label> Favorite Number:<br> </label>
+        <label> Favorite Number:</label>
         <input type="number" name="favoritenumber" placeholder="Optional"><br>
         <input id ="survey-submit" type="submit" placeholder="Submit">
 
 
     </form>
   </section>
-
+  
   <!--         Generator Slots Section          -->
 
   <section class="hide generator">
@@ -70,7 +70,7 @@
     </h3>
     <div class="buttons">
       <span id="re-roll">re-roll</span>
-      <span id="like">I like it!</span>
+      <!-- <span id="like">I like it!</span> -->
     </div>
   </section>
   <script src="vendor/vendorScripts/jquery-3.2.1.js"></script>
