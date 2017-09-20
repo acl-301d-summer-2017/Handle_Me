@@ -24,6 +24,7 @@ var app = app || {};
     app.words.slotArray.forEach( function ( arrayEle, currentIndex, array) {
       let idName = '#slot' + (currentIndex+1);
 
+      //If data-saved
       if ( $(idName).attr('data-saved') !== 'true' ) { $(idName).text(arrayEle); }
 
       //Update currentHandle with current displayed handle
