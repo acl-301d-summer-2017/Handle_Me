@@ -1,4 +1,9 @@
+@import url(https://fonts.googleapis.com/css?family=Bangers);
+
 body{
+    background-image: url("/images/bridge.jpg");
+    background-repeat: none;
+    background-size: 100%;
     text-align: center;
     margin: 0 auto;
 }
@@ -11,14 +16,10 @@ form{
     width: 50%;
 }
 
-#survey-submit{
-    border-radius: 25%;
-    width: 50%;
-    margin: 0 auto;
-}
-
 h1{
-    font-size: 300%;
+    font-size: 400%;
+    font-family: 'Bangers';
+    letter-spacing: 5px; 
 }
 
 label{
@@ -33,4 +34,15 @@ input, select{
     opacity: 1%;
     width: 100%;
 }
+
+footer{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: #efefef;
+    text-align: center;
+}
+
 
