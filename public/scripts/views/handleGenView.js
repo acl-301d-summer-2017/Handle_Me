@@ -23,10 +23,11 @@ var app = app || {};
   genView.appendWords = function () {
     app.words.slotArray.forEach( function ( arrayEle, currentIndex, array) {
       let idName = '#slot' + (currentIndex+1);
-      let concatType = 'camelCase';
+      let concatType = 'none';
 
       //If data-saved isn't true, append to DOM
       if ( $(idName).attr('data-saved') !== 'true' ) { 
+        debugger
         switch (concatType) {
           case 'camelCase':
             if (currentIndex > 0) {
@@ -34,29 +35,21 @@ var app = app || {};
               newElement[0] = newElement[0].toUpperCase();
               $(idName).text(newElement.join(''));
               break;
-            } else {
-              $(idName).text(arrayEle);
-              break;
-            }
+            } 
           case 'hyphenated':
             if (currentIndex > 0) {
               $(idName).text('-' + arrayEle);
               break;
-            } else {
-              $(idName).text(arrayEle);
-              break;
-            }
+            } 
           case 'snakeCase':
             if (currentIndex > 0) {
               $(idName).text('_' + arrayEle);
               break;
-            } else {
-              $(idName).text(arrayEle);
-              break;
-            }
+            } 
           case 'none':
               $(idName).text(arrayEle);
         }
+        
       }
 
       // Update currentHandle with current displayed handle
