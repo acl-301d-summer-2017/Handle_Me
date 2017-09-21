@@ -2,23 +2,21 @@
 @-webkit-keyframes blink-caret { 50% { border-color: transparent; } }
 
 #handle-survey{
-    font: bold 2em monospace;
-    color: black;
+    font-family: "Roboto", sans-serif;
+    color: white;
 	border-right: .1em solid black;
 	width: calc(0.55em * 14); 
-	width: 16ch;
+	width: 19ch;
 	white-space: nowrap;
 	overflow: hidden;
 	-webkit-animation: typing 2s steps(14, end), blink-caret .5s step-end infinite alternate;
-    font-size: 400%;
-    font-family: 'Bangers';
-    letter-spacing: 5px;
+    font-size: 600%;
     margin: 0 auto;
     padding-bottom: 2%;
 }
 
 .slots{
-    font-size: 350%;
+    font-size: 600%;
 }
 
 .slots:hover{
@@ -26,9 +24,10 @@
 }
 
 #slot1, #slot2, #slot3{
-    border: 1px solid black;
-    background-color: rgba(191, 187, 178, .5);
+    border: 1px solid red;
+    background-color: rgba(0, 0, 0, .75);
     padding: 1%;
+    color: white;
 }
 
 #slot1:hover, #slot2:hover, #slot3:hover{
@@ -42,13 +41,29 @@
     box-shadow: 10px 5px 5px rgba(0,0,0,.5);
 }
 
+#survey-box{
+    /* border: 2px solid bla; */
+    background-color: rgba(0, 0, 0, .75);
+    margin: 0 auto;
+    width :50%;
+    padding: 2%;
+}
+
+#handle-div{
+    background-color:white;
+}
+/* #gen-box{
+    background-color: black;
+} */
+
 #re-roll{
+    width: 50%;
     font-size: 200%;
     border: 1px solid black;
-    background-color: white;
+    background-color: grey;
     margin: 0 auto;
     padding: .5%;
-    border-radius: 50%; 
+    border-radius: 25%; 
     box-shadow: 10px 5px 5px rgba(0,0,0,.5);
 }
 
@@ -57,6 +72,41 @@
     font-size: 2.5em;
 }
 
+#availability-box{
+    font-size: 200%;
+    border: 2px solid white;
+    background-color:rgba(0, 0, 0, .75);
+    color: white;
+    margin: 0 auto;
+    width: 40%;
+}
+
+#conCat{
+    margin-top: 8%;
+}
+
 .about:hover{
     cursor:pointer;
+}
+
+#about-kramm{
+    border: 1px solid red;
+    background-color: rgba(0, 0, 0, .75);
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 10%;
+    margin-top: 3%;
+}
+
+.about-box{
+    background-color: rgba(0, 0, 0, .75);
+    border: 1px double red;
+    padding: 15%;
+    height: 500%;
+    width: 55%;
+    margin: 0 auto;
+}
+
+#maryus, #morgan{
+    float: right;
 }

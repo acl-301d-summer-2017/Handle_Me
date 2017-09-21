@@ -12,9 +12,6 @@ var app = app || {};
     app.words.checkTwit()
   }
 
-
-
-  
   genView.init = function (){ 
   $('.generator').show().siblings().hide();
   genView.populateSlots();
