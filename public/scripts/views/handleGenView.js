@@ -10,8 +10,6 @@ var app = app || {};
     app.words.checkInst()
     app.words.checkGit()
     app.words.checkTwit()
-    
-   
   }
 
 
