@@ -52,7 +52,7 @@ var app = app || {};
         //   } 
         // }
 
-    // append our app.words.slotArray to the DOM
+  // append our app.words.slotArray to the DOM
   genView.appendWords = function () {
     app.words.slotArray.forEach( function ( arrayEle, currentIndex, array) {
       let idName = '#slot' + (currentIndex+1);
