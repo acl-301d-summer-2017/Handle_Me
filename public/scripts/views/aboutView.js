@@ -2,15 +2,13 @@
 
 var app = app || {};
 
-(function (module){
+(function (module) {
 
-    const aboutView= {};
+    const aboutView = {};
 
-
-    AboutView.init = function (){
-    $('.survey').hide();
-    $('.generator').hide();
-    $('.about').show();
+    // hides survey and generator, shows the about us route
+    aboutView.init = function () {
+        $('.about').show().siblings().hide()
     }
 
     module.aboutView = aboutView;
