@@ -8,6 +8,8 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/styles/base.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
     <link rel="stylesheet" href="/styles/modules.css">
 
 </head>
@@ -20,7 +22,7 @@
 
   <section class="hide survey">
 
-    <h1 id="handle-survey">Handle Me Survey</h1>
+    <h1 id="handle-survey">Handle Me Survey<span class="exclaimCircle">!</span></h1>
 
 
     <form id = "login">
@@ -28,7 +30,8 @@
       <input type="text" name="firstname" placeholder="Optional"><br>
     </form>
 
-    <form id = "form">
+    <div id="survey-box">
+    <form id="form">
         <label>Chose your favorite topic: </label>
         <select name="Favorite Topic">
             <option value="" disabled selected>Select Your Option</option>
@@ -64,36 +67,52 @@
         <input id ="survey-submit" type="submit" placeholder="Submit">
 
     </form>
+      </div>
   </section>
   
   <!--         Generator Slots Section          -->
 
   <section class="hide generator">
-    <h1>Your Handle!</h1>
+
+
+    <h1 id="yourHandle">Your Handle!</h1>
+    <div id="availability-box"> this is the social media check box</div>
     <div>
       <span id="checkGit"></span>
       <span id="checkTwit"></span>
       <span id="checkInst"></span>
     </div>
-   
 
-    <h3 class="slots">
-      <span id="slot1">empty string</span>
-      <span id="slot2">empty string</span>
-      <span id="slot3">empty string</span>
+    <h3 class="slots" id="sort">
+      <!-- DONE TODO: remove line breaks in between span elements, otherwise they will have a small gap between them -->
+      <span id="slot1">empty string</span><span id="slot2">empty string</span><span id="slot3">empty string</span>
     </h3>
 
     <div class="buttons">
       <span id="re-roll">Re-Roll!</span>
-      <!-- <span id="like">I like it!</span> -->
     </div>
 
-    
+    <form>
+      <label>Concatenation Options</label>
+        <select id="concatOptions" name="Concatenation Options">
+            <option value="" disabled selected>Select Your Option</option>
+            <option value="none">None</option>
+            <option value="camelCase">CamelCase</option>
+            <option value="snakeCase">Snake_Case</option>
+            <option value="hyphenated">-Hyphenated-</option>
+        </select><br>
+    </form>
   </section>
 
 <!--              About Section                  -->
 <section class="hide about">
-  <h1>About the KRaMM team!</h1>
+  <h1 id="about-kramm">About the KRaMM team!</h1>
+  <div class="about-box">info here
+    <p id="kate">Kate</p>
+    <p id="robin">Robin</p>
+    <p id="maryus">Maryus</p>
+    <p id="morgan">Morgan is a junior developer from Colorado.</p>
+  </div>
 </section>
 
 </div>
@@ -103,6 +122,7 @@
   </footer>
 
   <script src="vendor/vendorScripts/jquery-3.2.1.js"></script>
+  <script src="vendor/vendorScripts/jquery-ui.min.js"></script>
   <script src="vendor/vendorScripts/page.js"></script>
   <script src="scripts/models/handleGen.js"></script>
   <script src="scripts/views/handleGenView.js"></script>

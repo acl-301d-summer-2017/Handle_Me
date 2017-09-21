@@ -12,40 +12,31 @@ var app = app || {};
     app.words.checkTwit()
   }
 
-
-
-
   genView.init = function (){ 
-  $('.generator').show().siblings().hide();
-  genView.populateSlots();
+    $('.generator').show().siblings().hide();
+    genView.populateSlots();
   };
 
   //  This function will repopulate slots when user clicks re-roll button
-  $("#re-roll").click(function(){
-    console.log("wokrs")
+  $('#re-roll').click(function(){
     app.genView.populateSlots()
   });
 
+  // Concat options listener
+  $('#concatOptions').on('change', function() {
+    app.words.concatType = this.value;
+    app.genView.updateCurrentHandle();
+  })
 
-  // append our app.words.slotArray to the DOM
+  // Append our app.words.slotArray to the DOM
   genView.appendWords = function () {
     app.words.slotArray.forEach( function ( arrayEle, currentIndex, array) {
       let idName = '#slot' + (currentIndex+1);
 
-      //If data-saved
-      if ( $(idName).attr('data-saved') !== 'true' ) { $(idName).text(arrayEle); }
+         if ( $(idName).attr('data-saved') !== 'true' ) { $(idName).text(arrayEle); }
 
-      //Update currentHandle with current displayed handle
-      app.words.currentHandle = '';
-      for (let i = 0; i < $('.slots').children().length; i++){
-        if (app.words.currentHandle === ''){
-          app.words.currentHandle += $('.slots').children().eq(i).text();
-        } else {
-          app.words.currentHandle += '-' + $('.slots').children().eq(i).text();
-        }
-        
-        //TODO: refactor to accomodate concationation options
-      }
+      //Update currentHandle variable
+      genView.updateCurrentHandle();
 
       //Add event listener to toggle "data-saved" status
       $(idName).off('click');
@@ -57,7 +48,40 @@ var app = app || {};
     });
   }
 
-  // populates our slots.
+  //Update currentHandle with current displayed handle
+  genView.updateCurrentHandle = function () {
+    app.words.currentHandle = '';
+
+    //TODO: Add comments so this shit makes sense
+    for (let i = 0; i < $('.slots').children().length; i++){
+       switch (app.words.concatType) {
+        case 'camelCase':
+          if (i > 0) {
+            let newElement = $('.slots').children().eq(i).text().split('');
+            newElement[0] = newElement[0].toUpperCase();
+            app.words.currentHandle += newElement.join('');
+            break;
+          } 
+        case 'hyphenated':
+          if (i > 0) {
+            app.words.currentHandle += '-' + $('.slots').children().eq(i).text();
+            break;
+          } 
+        case 'snakeCase':
+          if (i > 0) {
+            app.words.currentHandle += '_' + $('.slots').children().eq(i).text();
+            break;
+          } 
+        case 'none':
+        app.words.currentHandle += $('.slots').children().eq(i).text(); 
+      } 
+  }
+
+    // CurrentHandle appends to DOM
+    $('#yourHandle').text(app.words.currentHandle);
+  }
+
+  // Poplate all slots
   genView.populateSlots = function() {
     app.words.randomizeAll()
     genView.appendWords()
