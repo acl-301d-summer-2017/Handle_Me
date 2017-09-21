@@ -6,7 +6,15 @@ var app = app || {};
 
   const genView= {};
 
+  genView.appendSocial = function(){
+    app.words.checkInst()
+    app.words.checkGit()
+    app.words.checkTwit()
+  }
 
+
+
+  
   genView.init = function (){ 
   $('.generator').show().siblings().hide();
   genView.populateSlots();
@@ -14,6 +22,7 @@ var app = app || {};
 
   //  This function will repopulate slots when user clicks re-roll button
   $("#re-roll").click(function(){
+    console.log("wokrs")
     app.genView.populateSlots()
   });
 
