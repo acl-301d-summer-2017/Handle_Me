@@ -27,15 +27,24 @@ var app = app || {};
 
       //If data-saved isn't true, append to DOM
       if ( $(idName).attr('data-saved') !== 'true' ) { 
-        debugger
         switch (concatType) {
           case 'camelcase':
             if (currentIndex > 0) {
               let newElement = arrayEle.split('');
               newElement[0] = newElement[0].toUpperCase();
               $(idName).text(newElement.join(''));
+              break;
             } else {
-              $(idName).text(arrayEle); 
+              $(idName).text(arrayEle);
+              break;
+            }
+          case 'hyphenated':
+            if (currentIndex > 0) {
+              $(idName).text('-' + arrayEle);
+              break;
+            } else {
+              $(idName).text(arrayEle);
+              break;
             }
         }
         
