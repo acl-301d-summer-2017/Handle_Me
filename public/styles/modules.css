@@ -3,16 +3,14 @@
 
 #handle-survey{
     font: bold 2em monospace;
-    color: black;
+    color: white;
 	border-right: .1em solid black;
 	width: calc(0.55em * 14); 
-	width: 16ch;
+	width: 19ch;
 	white-space: nowrap;
 	overflow: hidden;
 	-webkit-animation: typing 2s steps(14, end), blink-caret .5s step-end infinite alternate;
-    font-size: 400%;
-    font-family: 'Bangers';
-    letter-spacing: 5px;
+    font-size: 600%;
     margin: 0 auto;
     padding-bottom: 2%;
 }
@@ -27,7 +25,7 @@
 
 #slot1, #slot2, #slot3{
     border: 1px solid black;
-    background-color: rgba(191, 187, 178, .5);
+    background-color: rgba(255, 249, 237, .75);
     padding: 1%;
 }
 
