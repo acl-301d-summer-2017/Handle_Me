@@ -57,7 +57,6 @@ var app = app || {};
           case 'none':
               $(idName).text(arrayEle);
         }
-
       }
 
       // Update currentHandle with current displayed handle
