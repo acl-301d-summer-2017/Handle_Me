@@ -18,45 +18,22 @@ var app = app || {};
   };
 
   //  This function will repopulate slots when user clicks re-roll button
-  $("#re-roll").click(function(){
+  $('#re-roll').click(function(){
     app.genView.populateSlots()
   });
 
+  // Concat options listener
+  $('#concatOptions').on('change', function() {
+    app.words.concatType = this.value;
+    app.genView.updateCurrentHandle();
+  })
 
-        
-
-  // append our app.words.slotArray to the DOM
+  // Append our app.words.slotArray to the DOM
   genView.appendWords = function () {
     app.words.slotArray.forEach( function ( arrayEle, currentIndex, array) {
       let idName = '#slot' + (currentIndex+1);
 
          if ( $(idName).attr('data-saved') !== 'true' ) { $(idName).text(arrayEle); }
-
-      // //If data-saved isn't true, append to DOM
-      // if ( $(idName).attr('data-saved') !== 'true' ) { 
-      //   debugger
-      //   switch (app.words.concatType) {
-      //     case 'camelCase':
-      //       if (currentIndex > 0) {
-      //         let newElement = arrayEle.split('');
-      //         newElement[0] = newElement[0].toUpperCase();
-      //         $(idName).text(newElement.join(''));
-      //         break;
-      //       } 
-      //     case 'hyphenated':
-      //       if (currentIndex > 0) {
-      //         $(idName).text('-' + arrayEle);
-      //         break;
-      //       } 
-      //     case 'snakeCase':
-      //       if (currentIndex > 0) {
-      //         $(idName).text('_' + arrayEle);
-      //         break;
-      //       } 
-      //     case 'none':
-      //         $(idName).text(arrayEle);
-      //   } 
-      // }
 
       //Update currentHandle variable
       genView.updateCurrentHandle();
@@ -99,11 +76,12 @@ var app = app || {};
         app.words.currentHandle += $('.slots').children().eq(i).text(); 
       } 
   }
-    // TODO: Append currentHandle to DOM here
-    console.log('currentHandle is now',app.words.currentHandle);
+
+    // CurrentHandle appends to DOM
+    $('#yourHandle').text(app.words.currentHandle);
   }
 
-  // populates our slots.
+  // Poplate all slots
   genView.populateSlots = function() {
     app.words.randomizeAll()
     genView.appendWords()
