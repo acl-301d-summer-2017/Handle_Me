@@ -46,6 +46,7 @@ var app = app || {};
       app.words.currentHandle += $('.slots').children().eq(i).text();
       //TODO: refactor to accomodate concationation options
     }
+    //TODO: append currentHandle to DOM
     console.log('currentHandle is now',app.words.currentHandle);
   }
 
