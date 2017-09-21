@@ -23,12 +23,12 @@ var app = app || {};
   genView.appendWords = function () {
     app.words.slotArray.forEach( function ( arrayEle, currentIndex, array) {
       let idName = '#slot' + (currentIndex+1);
-      let concatType = 'camelcase';
+      let concatType = 'snakeCase';
 
       //If data-saved isn't true, append to DOM
       if ( $(idName).attr('data-saved') !== 'true' ) { 
         switch (concatType) {
-          case 'camelcase':
+          case 'camelCase':
             if (currentIndex > 0) {
               let newElement = arrayEle.split('');
               newElement[0] = newElement[0].toUpperCase();
@@ -46,6 +46,17 @@ var app = app || {};
               $(idName).text(arrayEle);
               break;
             }
+          case 'snakeCase':
+            if (currentIndex > 0) {
+              $(idName).text('_' + arrayEle);
+              break;
+            } else {
+              $(idName).text(arrayEle);
+              break;
+            }
+          case 'none':
+              $(idName).text(arrayEle);
+          }
         }
         
         // $(idName).text(arrayEle); 
