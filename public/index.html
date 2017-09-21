@@ -64,10 +64,8 @@
     <h1>Your Handle!</h1>
 
     <h3 class="slots" id="sort">
-      <!-- TODO: remove line breaks in between span elements, otherwise they will have a small gap between them -->
-      <span id="slot1">empty string</span>
-      <span id="slot2">empty string</span>
-      <span id="slot3">empty string</span>
+      <!-- DONE TODO: remove line breaks in between span elements, otherwise they will have a small gap between them -->
+      <span id="slot1">empty string</span><span id="slot2">empty string</span><span id="slot3">empty string</span>
     </h3>
     <div class="buttons">
       <span id="re-roll">re-roll</span>
@@ -84,14 +82,6 @@
   <script src="scripts/controllers/handleGenController.js"></script>
   <script src="scripts/controllers/surveyController.js"></script>
   <script src="scripts/controllers/routes.js"></script>
-
-  <script type="text/javascript">
-    $('#sort').sortable({
-			'update' : function(e, ui){
-        app.genView.updateCurrentHandle();
-			}
-		});
-</script>
 
 </body>
 <footer>

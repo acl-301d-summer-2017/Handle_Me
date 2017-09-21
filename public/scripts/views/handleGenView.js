@@ -41,13 +41,12 @@ var app = app || {};
 
   //Update currentHandle with current displayed handle
   genView.updateCurrentHandle = function () {
-    console.log('in genview.updateCurrentHandle');
     app.words.currentHandle = '';
     for (let i = 0; i < $('.slots').children().length; i++){
       app.words.currentHandle += $('.slots').children().eq(i).text();
       //TODO: refactor to accomodate concationation options
     }
-    console.log(app.words.currentHandle);
+    console.log('currentHandle is now',app.words.currentHandle);
   }
 
   // populates our slots.
