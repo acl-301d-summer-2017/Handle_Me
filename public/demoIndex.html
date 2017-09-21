@@ -2,25 +2,25 @@
 <html>
 <head>
     <script src="vendor/vendorScripts/jquery-3.2.1.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-        <p type="text" id="textbox">This is stuff</p>
-        <br />
-        <a href="#" class="draggable">Text in link</a>
-        <div class="draggable">text in div</div>
+    <script src="vendor/vendorScripots/jquery-ui.min.js"></script>
 </head>
 <body>
 
-<script type="text/javascript">
-    $('.draggable').draggable({
-        revert: true,
-        helper: 'clone'
-    });
 
-    $("#textbox").droppable({
-        drop: function (event, ui) {
-            this.value = $(ui.draggable).text();
-        }
-    });
-</script>
+    <h3 class="slots" id="sort-me">
+        <span id="slot1">empty string</span>
+        <span id="slot2">empty string</span>
+        <span id="slot3">empty string</span>
+    </h3>
+
+
+
 </body>
+<script type="text/javascript">
+    $('#sort-me').sortable({
+			'update' : function(e, ui){
+				console.log($(this).sortable('toArray'));
+			}
+		});
+</script>
 </html>
