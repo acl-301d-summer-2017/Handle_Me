@@ -23,11 +23,12 @@ var app = app || {};
   genView.appendWords = function () {
     app.words.slotArray.forEach( function ( arrayEle, currentIndex, array) {
       let idName = '#slot' + (currentIndex+1);
+      
+      //TODO: move concatType to global
       let concatType = 'none';
 
       //If data-saved isn't true, append to DOM
       if ( $(idName).attr('data-saved') !== 'true' ) { 
-        debugger
         switch (concatType) {
           case 'camelCase':
             if (currentIndex > 0) {
@@ -48,8 +49,7 @@ var app = app || {};
             } 
           case 'none':
               $(idName).text(arrayEle);
-        }
-        
+        } 
       }
 
       // Update currentHandle with current displayed handle
