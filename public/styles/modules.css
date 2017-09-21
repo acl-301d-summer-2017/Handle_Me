@@ -2,7 +2,7 @@
 @-webkit-keyframes blink-caret { 50% { border-color: transparent; } }
 
 #handle-survey{
-    font: bold 2em monospace;
+    font-family: "Roboto", sans-serif;
     color: white;
 	border-right: .1em solid black;
 	width: calc(0.55em * 14); 
@@ -24,9 +24,10 @@
 }
 
 #slot1, #slot2, #slot3{
-    border: 1px solid black;
-    background-color: rgba(255, 249, 237, .75);
+    border: 1px solid red;
+    background-color: rgba(0, 0, 0, .75);
     padding: 1%;
+    color: white;
 }
 
 #slot1:hover, #slot2:hover, #slot3:hover{
@@ -38,6 +39,21 @@
     width: 50%;
     margin: 0 auto;
     box-shadow: 10px 5px 5px rgba(0,0,0,.5);
+}
+
+#survey-box{
+    border: 2px solid red;
+    background-color: rgba(0, 0, 0, .75);
+    margin: 0 auto;
+    width :50%;
+    padding: 2%;
+}
+
+#handle-div{
+    background-color:white;
+}
+#gen-box{
+    background-color: black;
 }
 
 #re-roll{
@@ -57,4 +73,22 @@
 
 .about:hover{
     cursor:pointer;
+}
+
+#about-kramm{
+    border: 1px solid red;
+    background-color: rgba(0, 0, 0, .75);
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 10%;
+    margin-top: 3%;
+}
+
+#about-box{
+    background-color: rgba(0, 0, 0, .75);
+    border: 1px double red;
+    padding: 15%;
+    height: 500%;
+    width: 55%;
+    margin: 0 auto;
 }
