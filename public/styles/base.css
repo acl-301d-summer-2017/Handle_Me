@@ -5,19 +5,20 @@ body{
     color: #202121;
     box-shadow: inset 0 0 0 1000px rgba(0,0,0,.6);
 }
+
 body::after {
-content : "";
-display: block;
-position: absolute;
-top: 0;
-left: 0;
-background-image: url(http://medias.photodeck.com/98c05ae7-cdc3-4c3b-9314-0e2e3d228eaf/140915-0046_PORTLAND_OREGON_X_uxga.jpg); 
-background-repeat: none;
-background-size: cover;
-width: 100%;
-height: 100%;
-opacity : 1;
-z-index: -1;
+    content : "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url(/images/bg.jpg); 
+    background-repeat: none;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    opacity : 1;
+    z-index: -1;
 }
 
 form{
