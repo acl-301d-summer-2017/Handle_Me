@@ -6,6 +6,17 @@ const PORT = process.env.PORT || 4000;
 const app = express();
 const request = require('request');
 const bodyParser = require('body-parser');
+const pg = require('pg');
+
+
+
+const client = new pg.Client('postgres://localhost:5432/handle_me');
+client.connect();
+client.on('error', err => console.error(err));
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
+
 
 app.use(express.static('./public'));
 
@@ -55,24 +66,60 @@ function getGit (req, res){
   })
 }
 
-
-app.get('/login/', function(request, response) {
+// checks if user already exists, creates one if not and returns id
+app.get('/login/', function (request, response) {
+  console.log ("im here",request.query.user_name)
   client.query(
     `Select * FROM users WHERE user_name = $1`,
-    [user_name]
+    [request.query.user_name]
   )
-  .then function(resolts) {
+    .then(result => {
+      console.log("after select Query",result.rows)
+      if (result.rows.length === 0) {
+        console.log ("new")
+        client.query(
+          'INSERT INTO users(user_name) VALUES ($1)',
+          [request.query.user_name],
+        ) 
+          .then (function () {
+            client.query(
+              'SELECT user_id FROM users WHERE user_name = $1',
+              [request.query.user_name]
+            ).then(function (res) {
+              sendResults(res.rows[0].user_id)
+            })
+          })
+          
+          .catch(function(e){
+            console.log (e)
+          })
+      } else {
+        console.log (result.rows[0].user_id)
+        sendResults(result.rows[0].user_id)
+      }
 
-
-  }
-  
-
+      function sendResults (result){
+        response.send({id:result})
+    
+      }
+    })
+    .catch(function(e){
+      console.log (e)
+    })
 })
 
+// app.post('/addFav', function (request, response) {
+//   client.query(
+//     `INSERT INTO handles( user_id, handle_name) VALUES ($1, $2) ON CONFLICT DO NOTHING`
+//     [request.user_id, request.user_name]
+//   )
+//   .then(function (res) {
+//     console.log (sendResults(request.user_id, request.user_name))
+//     sendResults(request.user_id, request.user_name)
+//   })
+// })
 
 loadDBTables()
-
-https://api.github.com/users/morganlacouture
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}!`));
 
@@ -86,24 +133,16 @@ function loadDBTables (){
 
   client.query(`
     CREATE TABLE IF NOT EXISTS
-      users
-        user_id SERIAL PRIMARY KEY
-        user_name VARCHAR(50) NOT NULL
+      users(
+        user_id SERIAL PRIMARY KEY,
+        user_name VARCHAR(50) NOT NULL);
   `)
 
   client.query(`
     CREATE TABLE IF NOT EXISTS
-      handles
-        handle_id SERIAL PRIMARY KEY
-        handle_name VARCHAR(200) NOT NULL
-        users_id INTEGER NOT NULL REFERENCES users(user_id)
+      handles (
+        handle_id SERIAL PRIMARY KEY,
+        handle_name VARCHAR(200) NOT NULL,
+        users_id INTEGER NOT NULL REFERENCES users(user_id) );
   `)
-
-
-
-
-
-
-
-
 } 

@@ -15,10 +15,41 @@ var app = app || {};
 
   let values = [];
 
-  words.username = $('#login').val();
+
+
+  ////            DATABASE STUFF      ////
   
 
-  $('Form').submit(function () {
+  $('#login').submit(function(){
+    event.preventDefault()
+    words.username = $('#login input').val();
+    console.log(words.username);
+    $.get('/login/', {user_name: words.username}) 
+  .then (function (data) {
+    console.log(data)
+    
+    words.userID = data.id} )
+  })
+
+  $('#addFav').click(function(){
+    event.preventDefault()
+  $.post('/addFav/', {user_id:words.userID, user_name: words.username }) 
+
+
+
+  })
+
+ 
+
+  words.SaveFavorite= function (username,currentHandle){}
+
+
+
+
+  ///           front end STUFF         ////
+  
+
+  $('#form').submit(function () {
     event.preventDefault()
     //For each form entry, push its value into values array
     $.each($('Form').serializeArray(), function (i, field) {
