@@ -24,13 +24,19 @@ var app = app || {};
     app.words.slotArray.forEach( function ( arrayEle, currentIndex, array) {
       let idName = '#slot' + (currentIndex+1);
       let concatType = 'camelcase';
+
       //If data-saved isn't true, append to DOM
       if ( $(idName).attr('data-saved') !== 'true' ) { 
-        switch (concatType){
+        debugger
+        switch (concatType) {
           case 'camelcase':
-            let newElement = arrayEle.split('');
-            newElement[0] = newElement[0].toUpperCase();
-            $(idName).text(newElement.join(''));
+            if (currentIndex > 0) {
+              let newElement = arrayEle.split('');
+              newElement[0] = newElement[0].toUpperCase();
+              $(idName).text(newElement.join(''));
+            } else {
+              $(idName).text(arrayEle); 
+            }
         }
         
         // $(idName).text(arrayEle); 
