@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta charset="UTF-8">
 
     <title> Handle Me </title>
@@ -11,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
     <link rel="stylesheet" href="/styles/modules.css">
+    <link rel="icon" href="/images/h-square.png" type="image/x-icon"/>
 
 </head>
 
@@ -51,11 +51,7 @@
             <option value="rel_trg=nerdy">Nerdy</option>
             <option value="rel_trg=anxious">Anxious</option>
         </select><br>
-        <label>First Name:</label>
-        <input type="text" name="firstname" placeholder="Optional"><br>
-
-        <label> Favorite Number:</label>
-        <input type="number" name="favoritenumber" placeholder="Optional"><br>
+        
         <input id ="survey-submit" type="submit" placeholder="Submit">
 
     </form>
@@ -77,7 +73,7 @@
 
     <h3 class="slots" id="sort">
       <!-- DONE TODO: remove line breaks in between span elements, otherwise they will have a small gap between them -->
-      <span id="slot1">empty string</span><span id="slot2">empty string</span><span id="slot3">empty string</span>
+      <span id="slot1"></span><span id="slot2"></span><span id="slot3"></span>
     </h3>
 
     <div class="buttons">
@@ -98,12 +94,16 @@
 
 <!--              About Section                  -->
 <section class="hide about">
-  <h1 id="about-kramm">About the KRaMM team!</h1>
-  <div class="about-box">info here
-    <p id="kate">Kate</p>
-    <p id="robin">Robin</p>
-    <p id="maryus">Maryus</p>
-    <p id="morgan">Morgan is a junior developer from Colorado.</p>
+  <h1 id="about-kramm">About KRaMM!</h1>
+  <div class="about-box">
+    <ul class="right">
+    <li id="kate">Kate blah blah blah blah blah blah blah blah blah</li> 
+    <li id="robin">Robin blah blah blah blah blah blah blah blah blah</li>
+    </ul>
+  <ul class="left">
+    <li id="maryus">Maryus blah blah blah blah blah blah blah blah blah</li> 
+    <li id="morgan">Morgan is a junior developer from Colorado.</li>
+    </ul>
   </div>
 </section>
 
