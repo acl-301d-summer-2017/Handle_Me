@@ -2,6 +2,7 @@
 @-webkit-keyframes blink-caret { 50% { border-color: transparent; } }
 
 #handle-survey{
+    font-family: "Roboto", sans-serif;
     font: bold 2em monospace;
     color: white;
 	border-right: .1em solid black;
