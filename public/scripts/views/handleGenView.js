@@ -102,7 +102,7 @@ var app = app || {};
         app.words.currentHandle += $('.slots').children().eq(i).text(); 
       } 
   }
-
+    // TODO: Append currentHandle to DOM here
     console.log('currentHandle is now',app.words.currentHandle);
   }
 
