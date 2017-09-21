@@ -14,7 +14,7 @@ var app = app || {};
 
   genView.init = function (){ 
   $('.generator').show().siblings().hide();
-  $('#blackBar').show();
+  // $('#blackBar').show();
   genView.populateSlots();
   };
 
