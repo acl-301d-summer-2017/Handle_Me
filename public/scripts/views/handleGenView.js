@@ -16,8 +16,8 @@ var app = app || {};
 
   
   genView.init = function (){ 
-  $('.generator').show().siblings().hide();
-  genView.populateSlots();
+    $('.generator').show().siblings().hide();
+    genView.populateSlots();
   };
 
   //  This function will repopulate slots when user clicks re-roll button
@@ -26,45 +26,42 @@ var app = app || {};
     app.genView.populateSlots()
   });
 
+  //TODO: add switch function to currentHandle process
+        // //If data-saved isn't true, append to DOM
+        // if ( $(idName).attr('data-saved') !== 'true' ) { 
+        //   switch (concatType) {
+        //     case 'camelCase':
+        //       if (currentIndex > 0) {
+        //         let newElement = arrayEle.split('');
+        //         newElement[0] = newElement[0].toUpperCase();
+        //         $(idName).text(newElement.join(''));
+        //         break;
+        //       } 
+        //     case 'hyphenated':
+        //       if (currentIndex > 0) {
+        //         $(idName).text('-' + arrayEle);
+        //         break;
+        //       } 
+        //     case 'snakeCase':
+        //       if (currentIndex > 0) {
+        //         $(idName).text('_' + arrayEle);
+        //         break;
+        //       } 
+        //     case 'none':
+        //         $(idName).text(arrayEle);
+        //   } 
+        // }
 
-  // append our app.words.slotArray to the DOM
+    // append our app.words.slotArray to the DOM
   genView.appendWords = function () {
     app.words.slotArray.forEach( function ( arrayEle, currentIndex, array) {
       let idName = '#slot' + (currentIndex+1);
-      
-      //TODO: move concatType to global
-      let concatType = 'none';
 
-      //If data-saved isn't true, append to DOM
-      if ( $(idName).attr('data-saved') !== 'true' ) { 
-        switch (concatType) {
-          case 'camelCase':
-            if (currentIndex > 0) {
-              let newElement = arrayEle.split('');
-              newElement[0] = newElement[0].toUpperCase();
-              $(idName).text(newElement.join(''));
-              break;
-            } 
-          case 'hyphenated':
-            if (currentIndex > 0) {
-              $(idName).text('-' + arrayEle);
-              break;
-            } 
-          case 'snakeCase':
-            if (currentIndex > 0) {
-              $(idName).text('_' + arrayEle);
-              break;
-            } 
-          case 'none':
-              $(idName).text(arrayEle);
-        } 
-      }
-
-
+      //If data-saved
+      if ( $(idName).attr('data-saved') !== 'true' ) { $(idName).text(arrayEle); }
 
       //Update currentHandle variable
       genView.updateCurrentHandle();
-
 
       //Add event listener to toggle "data-saved" status
       $(idName).off('click');
