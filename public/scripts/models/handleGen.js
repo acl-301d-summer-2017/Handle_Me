@@ -32,11 +32,13 @@ var app = app || {};
     page('/gen');
   });
 
-  $("#about").click(function () {
-    console.log('click running');
-    page('/about');
-  })
 
+  //Event listener for sortable slots. Updates currentHandle variable after dragging.
+  $('#sort').sortable({
+    'update' : function(e, ui){
+      app.genView.updateCurrentHandle();
+    }
+  });
 
 
   // this array will contain 3 arrays of data from API

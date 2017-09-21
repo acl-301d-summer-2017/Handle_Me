@@ -35,17 +35,10 @@ var app = app || {};
       //If data-saved
       if ( $(idName).attr('data-saved') !== 'true' ) { $(idName).text(arrayEle); }
 
-      //Update currentHandle with current displayed handle
-      app.words.currentHandle = '';
-      for (let i = 0; i < $('.slots').children().length; i++){
-        if (app.words.currentHandle === ''){
-          app.words.currentHandle += $('.slots').children().eq(i).text();
-        } else {
-          app.words.currentHandle += '-' + $('.slots').children().eq(i).text();
-        }
-        
-        //TODO: refactor to accomodate concationation options
-      }
+
+      //Update currentHandle variable
+      genView.updateCurrentHandle();
+
 
       //Add event listener to toggle "data-saved" status
       $(idName).off('click');
@@ -55,6 +48,17 @@ var app = app || {};
         })
 
     });
+  }
+
+  //Update currentHandle with current displayed handle
+  genView.updateCurrentHandle = function () {
+    app.words.currentHandle = '';
+    for (let i = 0; i < $('.slots').children().length; i++){
+      app.words.currentHandle += $('.slots').children().eq(i).text();
+      //TODO: refactor to accomodate concationation options
+    }
+    //TODO: append currentHandle to DOM
+    console.log('currentHandle is now',app.words.currentHandle);
   }
 
   // populates our slots.
