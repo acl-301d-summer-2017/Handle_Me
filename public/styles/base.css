@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Bangers);
+
 body{
     /* display: flex;
     flex-direction: column;
@@ -6,7 +8,6 @@ body{
     font-family: "Roboto", sans-serif;
     color: #202121;
     /* background: #f4f7f6; */
-    background: rgba(43, 43, 43, 0.54);
 }
 body::after {
 content : "";
@@ -20,3 +21,43 @@ height: 100%;
 opacity : 0.8;
 z-index: -1;
 }
+ 
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    margin: 0 auto;
+    width: 50%;
+}
+
+h1{
+    font-size: 400%;
+    font-family: 'Bangers';
+    letter-spacing: 5px; 
+}
+
+label{
+    font-size: 150%;
+    padding: .5em;
+    font-weight: bold;
+}
+
+input, select{
+    font-size: 140%;
+    text-align-last: center;
+    opacity: 1%;
+    width: 100%;
+}
+
+footer{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: #efefef;
+    text-align: center;
+}
+
+
