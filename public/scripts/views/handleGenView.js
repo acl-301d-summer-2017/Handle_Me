@@ -13,13 +13,15 @@ var app = app || {};
   }
 
 
+
+  
   genView.init = function (){ 
   $('.generator').show().siblings().hide();
   genView.populateSlots();
   };
 
   //  This function will repopulate slots when user clicks re-roll button
-  $(".re-roll").click(function(){
+  $("#re-roll").click(function(){
     console.log("wokrs")
     app.genView.populateSlots()
   });
