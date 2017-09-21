@@ -33,31 +33,33 @@ var app = app || {};
     app.words.slotArray.forEach( function ( arrayEle, currentIndex, array) {
       let idName = '#slot' + (currentIndex+1);
 
-      //If data-saved isn't true, append to DOM
-      if ( $(idName).attr('data-saved') !== 'true' ) { 
-        debugger
-        switch (app.words.concatType) {
-          case 'camelCase':
-            if (currentIndex > 0) {
-              let newElement = arrayEle.split('');
-              newElement[0] = newElement[0].toUpperCase();
-              $(idName).text(newElement.join(''));
-              break;
-            } 
-          case 'hyphenated':
-            if (currentIndex > 0) {
-              $(idName).text('-' + arrayEle);
-              break;
-            } 
-          case 'snakeCase':
-            if (currentIndex > 0) {
-              $(idName).text('_' + arrayEle);
-              break;
-            } 
-          case 'none':
-              $(idName).text(arrayEle);
-        } 
-      }
+         if ( $(idName).attr('data-saved') !== 'true' ) { $(idName).text(arrayEle); }
+
+      // //If data-saved isn't true, append to DOM
+      // if ( $(idName).attr('data-saved') !== 'true' ) { 
+      //   debugger
+      //   switch (app.words.concatType) {
+      //     case 'camelCase':
+      //       if (currentIndex > 0) {
+      //         let newElement = arrayEle.split('');
+      //         newElement[0] = newElement[0].toUpperCase();
+      //         $(idName).text(newElement.join(''));
+      //         break;
+      //       } 
+      //     case 'hyphenated':
+      //       if (currentIndex > 0) {
+      //         $(idName).text('-' + arrayEle);
+      //         break;
+      //       } 
+      //     case 'snakeCase':
+      //       if (currentIndex > 0) {
+      //         $(idName).text('_' + arrayEle);
+      //         break;
+      //       } 
+      //     case 'none':
+      //         $(idName).text(arrayEle);
+      //   } 
+      // }
 
       //Update currentHandle variable
       genView.updateCurrentHandle();
@@ -76,15 +78,31 @@ var app = app || {};
   genView.updateCurrentHandle = function () {
     app.words.currentHandle = '';
 
+    //TODO: Add comments so this shit makes sense
     for (let i = 0; i < $('.slots').children().length; i++){
-      app.words.currentHandle += $('.slots').children().eq(i).text();
+       switch (app.words.concatType) {
+        case 'camelCase':
+          if (i > 0) {
+            let newElement = $('.slots').children().eq(i).text().split('');
+            newElement[0] = newElement[0].toUpperCase();
+            app.words.currentHandle += newElement.join('');
+            break;
+          } 
+        case 'hyphenated':
+          if (i > 0) {
+            app.words.currentHandle += '-' + $('.slots').children().eq(i).text();
+            break;
+          } 
+        case 'snakeCase':
+          if (i > 0) {
+            app.words.currentHandle += '_' + $('.slots').children().eq(i).text();
+            break;
+          } 
+        case 'none':
+        app.words.currentHandle += $('.slots').children().eq(i).text(); 
+      } 
+  }
 
-
-      //TODO: refactor to accomodate concationation options
-    }
-
-
-    //TODO: append currentHandle to DOM
     console.log('currentHandle is now',app.words.currentHandle);
   }
 
