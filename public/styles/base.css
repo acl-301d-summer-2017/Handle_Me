@@ -1,49 +1,11 @@
 @import url(https://fonts.googleapis.com/css?family=Bangers);
 
 body{
+    background-image: url("/images/bridge.jpg");
+    background-repeat: none;
+    background-size: 100%;
     text-align: center;
     margin: 0 auto;
-      background:#ec6a38;
-  -webkit-animation:colour 10s linear infinite;
-	-moz-animation:colour 10s linear infinite;
-  
-}
-@-webkit-keyframes colour{
-	0%{
-		background:#ec6a38
-	}
-
-	40%{
-		background:#ec4038
-	}
-
-	80%{
-		background:#ec9138
-	}
-
-	100%{
-		background:#ec6a38
-	}
-
-}
-
-@-moz-keyframes colour{
-	0%{
-		background:#ec6a38
-	}
-
-	40%{
-		background:#ec4038
-	}
-
-	80%{
-		background:#ec9138
-	}
-
-	100%{
-		background:#ec6a38
-	}
-
 }
 
 form{
