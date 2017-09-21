@@ -1,21 +1,22 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <script src="vendor/vendorScripts/jquery-3.2.1.js"></script>
-    <script src="vendor/vendorScripots/jquery-ui.min.js"></script>
+    
 </head>
 <body>
 
 
-    <h3 class="slots" id="sort-me">
-        <span id="slot1">empty string</span>
-        <span id="slot2">empty string</span>
-        <span id="slot3">empty string</span>
-    </h3>
+    <ul class="slots" id="sort-me">
+        <li id="slot1">empty string</li>
+        <li id="slot2">empty string</li>
+        <li id="slot3">empty string</li>
+    </ul>
 
 
 
 </body>
+<script src="vendor/vendorScripts/jquery-3.2.1.js"></script>
+<script src="vendor/vendorScripts/jquery-ui.min.js"></script>
 <script type="text/javascript">
     $('#sort-me').sortable({
 			'update' : function(e, ui){
