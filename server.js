@@ -56,6 +56,54 @@ function getGit (req, res){
 }
 
 
+app.get('/login/', function(request, response) {
+  client.query(
+    `Select * FROM users WHERE user_name = $1`,
+    [user_name]
+  )
+  .then function(resolts) {
+
+
+  }
+  
+
+})
+
+
+loadDBTables()
+
 https://api.github.com/users/morganlacouture
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}!`));
+
+
+
+
+
+///           DATABASE          ////
+
+function loadDBTables (){
+
+  client.query(`
+    CREATE TABLE IF NOT EXISTS
+      users
+        user_id SERIAL PRIMARY KEY
+        user_name VARCHAR(50) NOT NULL
+  `)
+
+  client.query(`
+    CREATE TABLE IF NOT EXISTS
+      handles
+        handle_id SERIAL PRIMARY KEY
+        handle_name VARCHAR(200) NOT NULL
+        users_id INTEGER NOT NULL REFERENCES users(user_id)
+  `)
+
+
+
+
+
+
+
+
+} 

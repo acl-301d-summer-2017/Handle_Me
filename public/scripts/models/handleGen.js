@@ -14,6 +14,10 @@ var app = app || {};
   words.currentHandle = '';
 
   let values = [];
+
+  words.username = $('#login').val();
+  
+
   $('Form').submit(function () {
     event.preventDefault()
     //For each form entry, push its value into values array
