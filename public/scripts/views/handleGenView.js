@@ -6,6 +6,14 @@ var app = app || {};
 
   const genView= {};
 
+  genView.appendSocial = function(){
+    app.words.checkInst()
+    app.words.checkGit()
+    app.words.checkTwit()
+    
+   
+  }
+
 
   genView.init = function (){
   $('.survey').hide();

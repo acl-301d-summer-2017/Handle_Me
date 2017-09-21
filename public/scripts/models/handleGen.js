@@ -3,15 +3,6 @@
 var app = app || {};
 
 (function (module){
-
-
-
-  $(".about").click(function(){
-    console.log("wokrs")
-  });
-
-
-
   //Gets results from the form
   const words = {};
 
@@ -89,7 +80,8 @@ var app = app || {};
     $.get('/twit/' + words.currentHandle)
           .then ( function(data) {
             console.log(data)
-          words.availability = JSON.parse(data.body).reason;
+          words.twitStatus = JSON.parse(data.body).reason;
+          $('#checkTwit').text(words.twitStatus)
           console.log('words.availability:',words.currentHandle,words.availability)
        })
      }
@@ -98,7 +90,9 @@ var app = app || {};
     $.get('/inst/' + words.currentHandle)
       .then ( function(data) {
       data.statusCode === 404 ? words.instStatus =  "availible!" :  words.instStatus = "taken :(";
+      $('#checkInst').text(words.instStatus);
       console.log('words.instStatus:',words.currentHandle,words.instStatus)
+      
       })
   }
   
@@ -106,8 +100,9 @@ var app = app || {};
   words.checkGit = function(){
     $.get('/git/' + words.currentHandle)
       .then ( function(data) {
-        JSON.parse(data.body).message == "Not Found" ? words.instStatus =  "availible!" :  words.instStatus = "taken :(";
-      console.log('words.instStatus:',words.currentHandle,words.instStatus)
+        JSON.parse(data.body).message == "Not Found" ? words.gitStatus =  "availible!" :  words.gitStatus = "taken :(";
+        $('#checkGit').text(words.gitStatus)
+      console.log('words.gitStatus:',words.currentHandle,words.instStatus)
       })
   }
 
