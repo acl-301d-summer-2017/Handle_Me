@@ -98,11 +98,15 @@
     margin-top: 3%;
 }
 
-#about-box{
+.about-box{
     background-color: rgba(0, 0, 0, .75);
     border: 1px double red;
     padding: 15%;
     height: 500%;
     width: 55%;
     margin: 0 auto;
+}
+
+#maryus, #morgan{
+    float: right;
 }
