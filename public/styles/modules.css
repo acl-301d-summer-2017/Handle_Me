@@ -35,8 +35,8 @@
     box-shadow: 0 0 85px grey;
 }
 
-span[data-saved="true"] {
-    background-color: grey;
+[data-saved="true"] {
+    filter: brightness(50%);
 }
 
 #survey-submit{
