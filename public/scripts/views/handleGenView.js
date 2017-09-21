@@ -7,9 +7,8 @@ var app = app || {};
   const genView= {};
 
 
-  genView.init = function (){
-  $('.survey').hide();
-  $('.generator').show();
+  genView.init = function (){ 
+  $('.generator').show().siblings().hide();
   genView.populateSlots();
   };
 

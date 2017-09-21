@@ -1,6 +1,49 @@
+@import url(https://fonts.googleapis.com/css?family=Bangers);
+
 body{
     text-align: center;
     margin: 0 auto;
+      background:#ec6a38;
+  -webkit-animation:colour 10s linear infinite;
+	-moz-animation:colour 10s linear infinite;
+  
+}
+@-webkit-keyframes colour{
+	0%{
+		background:#ec6a38
+	}
+
+	40%{
+		background:#ec4038
+	}
+
+	80%{
+		background:#ec9138
+	}
+
+	100%{
+		background:#ec6a38
+	}
+
+}
+
+@-moz-keyframes colour{
+	0%{
+		background:#ec6a38
+	}
+
+	40%{
+		background:#ec4038
+	}
+
+	80%{
+		background:#ec9138
+	}
+
+	100%{
+		background:#ec6a38
+	}
+
 }
 
 form{
@@ -11,14 +54,10 @@ form{
     width: 50%;
 }
 
-#survey-submit{
-    border-radius: 25%;
-    width: 50%;
-    margin: 0 auto;
-}
-
 h1{
-    font-size: 300%;
+    font-size: 400%;
+    font-family: 'Bangers';
+    letter-spacing: 5px; 
 }
 
 label{
@@ -33,4 +72,15 @@ input, select{
     opacity: 1%;
     width: 100%;
 }
+
+footer{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: #efefef;
+    text-align: center;
+}
+
 

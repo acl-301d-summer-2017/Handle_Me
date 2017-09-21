@@ -13,11 +13,11 @@
 </head>
 
 <body>
-
+  <div>
   <!--          Survey Section          -->
   <section class="hide survey">
 
-    <h1>Handle Me Survey</h1>
+    <h1 id="handle-survey">Handle Me Survey</h1>
 
     <form>
         <label>Chose your favorite topic: </label>
@@ -54,7 +54,6 @@
         <input type="number" name="favoritenumber" placeholder="Optional"><br>
         <input id ="survey-submit" type="submit" placeholder="Submit">
 
-
     </form>
   </section>
   
@@ -69,20 +68,32 @@
       <span id="slot3">empty string</span>
     </h3>
     <div class="buttons">
-      <span id="re-roll">re-roll</span>
+      <span id="re-roll">Re-Roll!</span>
       <!-- <span id="like">I like it!</span> -->
     </div>
   </section>
+
+<!--              About Section                  -->
+<section class="hide about">
+  <h1>About the KRaMM team!</h1>
+</section>
+
+</div>
+<footer>
+    &copy; 2017 Alchemy Code Lab | Handle Me | <span id="about-route">About</span>
+    <!-- <span id='about'> About</span>  -->
+  </footer>
+
   <script src="vendor/vendorScripts/jquery-3.2.1.js"></script>
   <script src="vendor/vendorScripts/page.js"></script>
   <script src="scripts/models/handleGen.js"></script>
   <script src="scripts/views/handleGenView.js"></script>
+  <script src="scripts/views/aboutView.js"></script>
   <script src="scripts/views/surveyView.js"></script>
   <script src="scripts/controllers/handleGenController.js"></script>
   <script src="scripts/controllers/surveyController.js"></script>
+  <script src="scripts/controllers/aboutController.js"></script>
   <script src="scripts/controllers/routes.js"></script>
+
 </body>
-<footer>
-    &copy; 2017 Alchemy Code Lab | Handle Me | Team KRaMM
-  </footer>
 </html>
