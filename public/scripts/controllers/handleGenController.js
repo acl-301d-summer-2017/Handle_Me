@@ -9,8 +9,6 @@ var app = app || {};
     app.words.requestWords(app.genView.init) 
   }
 
-  genControl.concatOption = 'none';
-
   module.genControl = genControl;
 
 })(app);

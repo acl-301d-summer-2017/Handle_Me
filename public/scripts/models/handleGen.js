@@ -14,7 +14,7 @@ var app = app || {};
   words.currentHandle = '';
 
   //Option for concatination of final handle (app.words.currentHandle)
-  words.concatOption = 'none';
+  words.concatType = 'none';
 
   let values = [];
   $('Form').submit(function () {
