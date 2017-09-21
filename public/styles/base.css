@@ -71,4 +71,6 @@ footer{
     text-align: center;
 }
 
+@media only screen (min-width: 360px and max-width: 736px);
+
 
