@@ -142,7 +142,6 @@ var app = app || {};
   words.checkGit = function(){
     $.get('/git/' + words.currentHandle)
       .then ( function(data) {
-        debugger
         JSON.parse(data.body).message == "Not Found" ? words.gitStatus =  "availible!" :  words.gitStatus = "taken :(";
         $('#checkGit').text(words.gitStatus)
       console.log('words.gitStatus:',words.currentHandle,words.instStatus)
