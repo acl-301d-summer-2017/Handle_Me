@@ -1,5 +1,11 @@
 'use strict';
 
+//Temporary function, used for demo purposes
+var check = function (handle){
+  app.words.currentHandle = handle;
+  app.genView.appendSocial();
+}
+
 var app = app || {};
 
 (function (module){
