@@ -6,28 +6,29 @@
     <title> Handle Me </title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/styles/base.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+    <link rel= "stylesheet" href="/vendor/vendorStyles/normalize.css">
+    <link rel="stylesheet" href="/styles/base.css">
     <link rel="stylesheet" href="/styles/modules.css">
-    <link rel="icon" href="/images/h-square.png" type="image/x-icon"/>
+
+    <link rel="icon" href="/vendor/images/h-square.png" type="image/x-icon"/>
 
 </head>
 
 <body>
-  <div>
+  <div id="shadow">
   <!--          Survey Section          -->
 
 
 
   <section class="hide survey">
 
-    <div id="handle-survey">Handle Me Survey<span class="exclaimCircle">!</span></div>
-
+    <div id="title-survey">Handle Me Survey<span id="exclaimCircle">!</span></div>
 
     <form id = "login">
-      <label>First Name:</label>
-      <input type="text" name="firstname" placeholder="Optional"><br>
+      <input type="text" name="firstname" placeholder="your Username"><br>
+      <input id ="login-submit" type="submit" placeholder="Login/Create">
     </form>
 
     <div id="survey-box">
@@ -70,31 +71,31 @@
 
   <div id="blackBar"></div>
   <section class="hide generator">
+
+  <div style="margin:25px"></div>
+
+      <div id="availability-box">
+          Twitter:<span id="checkTwit"></span>
+         Instagram:<span id="checkInst"></span>
+          GitHub:<span id="checkGit"></span>
+        </div>
+
+        <div id='faveDisplay'></div>
     
     <h1 id="yourHandle">Your Handle<span class="exclaimCircle">!</span></h1>
-    <div id="availability-box"> This is your social media check box</div>
+    
 
-    <div id='faveDisplay'></div>
-    <div>
-      <span id="checkGit"></span>
-      <span id="checkTwit"></span>
-      <span id="checkInst"></span>
-    </div>
 
     <h3 class="slots" id="sort">
-      <!-- DONE TODO: remove line breaks in between span elements, otherwise they will have a small gap between them -->
       <span id="slot1"></span><span id="slot2"></span><span id="slot3"></span>
     </h3>
 
-    <div class="buttons">
-      <span id="re-roll">Re-Roll</span>
-      <span id="addFav">Favorite</span>
-      </div>
+    <div class="buttons" style="display:inline; padding-right:40px;"><span id="re-roll">Re-Roll</span></div>
+    <div class="buttons" style="display:inline"><span id="addFav">Favorite</span></div>
 
     <form>
-      <label id="conCatName">Concatenation Options</label>
         <select id="concatOptions" name="Concatenation Options">
-            <option value="" disabled selected>Select Your Option</option>
+            <option value="" disabled selected>Concatenation Options</option>
             <option value="none">None</option>
             <option value="camelCase">CamelCase</option>
             <option value="snakeCase">Snake_Case</option>
@@ -119,10 +120,11 @@
 </section>
 
 </div>
+
 <footer>
     &copy; 2017 Alchemy Code Lab | Handle Me | <span id="about-route">About</span>
     <!-- <span id='about'> About</span>  -->
-  </footer>
+</footer>
 
   <script src="vendor/vendorScripts/jquery-3.2.1.js"></script>
   <script src="vendor/vendorScripts/jquery-ui.min.js"></script>

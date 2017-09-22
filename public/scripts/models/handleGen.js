@@ -127,23 +127,21 @@ var app = app || {};
   
   // API 2
 
-  words.availability = '';
 
 
   words.checkTwit = function(){
     $.get('/twit/' + words.currentHandle)
           .then ( function(data) {
-            console.log(data)
-          words.twitStatus = JSON.parse(data.body).reason;
+          words.twitStatus = JSON.parse(data.body).msg;
           $('#checkTwit').text(words.twitStatus)
-          console.log('words.availability:',words.currentHandle,words.availability)
+          console.log('words.Twitstatus:',words.currentHandle,words.twitStatus)
        })
      }
 
   words.checkInst = function(){
     $.get('/inst/' + words.currentHandle)
       .then ( function(data) {
-      data.statusCode === 404 ? words.instStatus =  "availible!" :  words.instStatus = "taken :(";
+      data.statusCode === 404 ? words.instStatus = 'availible!' :  words.instStatus = 'taken:(';
       $('#checkInst').text(words.instStatus);
       console.log('words.instStatus:',words.currentHandle,words.instStatus)
       
@@ -154,9 +152,9 @@ var app = app || {};
   words.checkGit = function(){
     $.get('/git/' + words.currentHandle)
       .then ( function(data) {
-        JSON.parse(data.body).message == "Not Found" ? words.gitStatus =  "availible!" :  words.gitStatus = "taken :(";
+        JSON.parse(data.body).message == "Not Found" ? words.gitStatus =  'availible!' :  words.gitStatus = 'taken :(';
         $('#checkGit').text(words.gitStatus)
-      console.log('words.gitStatus:',words.currentHandle,words.instStatus)
+      console.log('words.gitStatus:',words.currentHandle,words.gitStatus)
       })
   }
 
