@@ -12,8 +12,9 @@
 	-webkit-animation: typing 2s steps(14, end), blink-caret .5s step-end infinite alternate;
     font-size: 600%;
     margin: 0 auto;
-    margin-bottom: 8%;
+    margin-bottom: 4%;
     padding-bottom: 2%;
+    padding-top: 10%;
 }
 
 .slots{
@@ -25,7 +26,8 @@
 }
 
 #slot1, #slot2, #slot3{
-    border: 1px solid red;
+    border-left: 1px solid red;
+    border-right: 1px solid red;
     background-color: rgba(0, 0, 0, .75);
     padding: 1%;
     color: white;
@@ -36,6 +38,7 @@
 }
 
 [data-saved="true"] {
+    background-color: grey;
     filter: brightness(50%);
 }
 
@@ -44,6 +47,7 @@
     width: 50%;
     margin: 0 auto;
     box-shadow: 10px 5px 5px rgba(0,0,0,.5);
+    margin-bottom: 2%;
 }
 
 #survey-box{
@@ -51,6 +55,10 @@
     margin: 0 auto;
     width :50%;
     padding: 2%;
+}
+
+#bottom-select{
+    margin-bottom: 5%;
 }
 
 #handle-div{
