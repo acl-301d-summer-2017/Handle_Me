@@ -35,20 +35,20 @@
         <label>Chose your favorite topic: </label>
         <select name="Favorite Topic">
             <option value="" disabled selected>Select Your Option</option>
-            <option value="sl=sports">Sports</option>
-            <option value="sl=science">Science</option>
-            <option value="sl=nature">Nature</option>
-            <option value="sl=art">Art</option>
-            <option value="sl=food">Food</option>
+            <option value="rel_jjb=sports">Sports</option>
+            <option value="rel_jjb=science">Science</option>
+            <option value="rel_jjb=nature">Nature</option>
+            <option value="rel_jjb=art">Art</option>
+            <option value="rel_jjb=food">Food</option>
         </select><br>
         <label>Chose your current mood:</label>
         <select name="Current Mood">
             <option value="" disabled selected>Select Your Option</option>
-            <option value="rel_trg=blissful">Blissful</option>
-            <option value="rel_trg=curious">Curious</option>
-            <option value="rel_trg=blah">Blah</option>
-            <option value="rel_trg=weird">Weird</option>
-            <option value="rel_trg=chilled">Chilled</option>
+            <option value="rel_jja=blissful">Blissful</option>
+            <option value="rel_jja=curious">Curious</option>
+            <option value="rel_jja=blah">Blah</option>
+            <option value="rel_jja=weird">Weird</option>
+            <option value="rel_jja=chilled">Chilled</option>
         </select><br>
         <label>How would your friends describe you:</label>
         <select  id="bottom-select" name="Personality Trait">
@@ -91,15 +91,12 @@
     </h3>
 
     <div class="buttons">
-      <span id="re-roll">Re-Roll!</span>
+      <span id="re-roll">Re-Roll</span>
+      <span id="addFav">Favorite</span>
       </div>
 
-    <div class="buttons">
-      <span id="addFav">addFav</span>
-    </div>
-
     <form>
-      <label>Concatenation Options</label>
+      <label id="conCatName">Concatenation Options</label>
         <select id="concatOptions" name="Concatenation Options">
             <option value="" disabled selected>Select Your Option</option>
             <option value="none">None</option>
