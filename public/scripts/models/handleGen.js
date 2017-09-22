@@ -22,7 +22,6 @@ var app = app || {};
 
   ////            DATABASE STUFF      ////
   
-
   $('#survey-submit').click(function(){
     words.username = $('#login input').val();
     console.log(words.username);
@@ -44,7 +43,6 @@ var app = app || {};
   })
 
   words.populateFaves = function(){
-  
     $.get('/Faves/', {user_id:words.userID}) 
   .then (function (data) {
     console.log(data)
@@ -58,7 +56,6 @@ var app = app || {};
 
 
   ///           front end STUFF         ////
-  
 
   $('#form').submit(function () {
     event.preventDefault()
@@ -126,10 +123,7 @@ var app = app || {};
   }
 
   
-  // API 2
-
-
-
+  // API availability functions
   words.checkTwit = function(){
     $.get('/twit/' + words.currentHandle)
           .then ( function(data) {
@@ -148,7 +142,6 @@ var app = app || {};
       
       })
   }
-  
 
   words.checkGit = function(){
     $.get('/git/' + words.currentHandle)

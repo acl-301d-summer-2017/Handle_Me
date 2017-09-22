@@ -20,14 +20,12 @@
   <div id="shadow">
   <!--          Survey Section          -->
 
-
-
   <section class="hide survey">
 
-    <div id="title-survey">Handle Me Survey<span id="exclaimCircle">!</span></div>
+    <div id="title-survey">Handle Me <span id="exclaimCircle">!</span></div>
 
     <form id = "login">
-      <input type="text" name="firstname" placeholder="your Username"><br>
+      <input class="options" type="text" name="firstname" placeholder="Enter Username"><br>
     </form>
 
     <div id="survey-box">
@@ -69,16 +67,10 @@
   <!--         Generator Slots Section          -->
 
   <div id="blackBar"></div>
-  <section class="hide generator">
-
-  <div style="padding:25px"></div>
-
-
-
+  <section class="hide generator" id="top-margin">
     
     <h1 id="yourHandle">Your Handle<span class="exclaimCircle">!</span></h1>
     
-
     <h3 class="slots" id="sort">
       <span id="slot1"></span><span id="slot2"></span><span id="slot3"></span>
     </h3>
@@ -87,7 +79,7 @@
     <div class="buttons" ><span id="addFav">Favorite</span></div>
 
     <form>
-        <select id="concatOptions" name="Concatenation Options">
+        <select class="options" name="Concatenation Options">
             <option value="" disabled selected>Concatenation Options</option>
             <option value="none">None</option>
             <option value="camelCase">CamelCase</option>
@@ -99,11 +91,11 @@
     <div id="flex-wrapper">
 
     <ul id="faveDisplay"></ul>
-
+    
     <ul id="availability-box">
-       <li> Twitter:<span id="checkTwit"></span></li>
-       <li> Instagram:<span id="checkInst"></span></li>
-       <li> GitHub:<span id="checkGit"></span></li>
+       <li class="availability-li"> Twitter: <span id="checkTwit"></span></li>
+       <li class="availability-li"> Instagram: <span id="checkInst"></span></li>
+       <li class="availability-li"> GitHub: <span id="checkGit"></span></li>
     </ul>
 
     </div>
