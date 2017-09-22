@@ -31,7 +31,6 @@ var app = app || {};
     console.log(data)
     
     words.userID = data.userid
-    console.log("words user id should be a number",typeof words.userID)
     })
   })
 
@@ -156,7 +155,7 @@ var app = app || {};
       .then ( function(data) {
         JSON.parse(data.body).message == "Not Found" ? words.gitStatus =  'availible!' :  words.gitStatus = 'taken :(';
         $('#checkGit').text(words.gitStatus)
-      console.log('words.gitStatus:',words.currentHandle,words.gitStatus)
+      console.log('words.gitStatus:',data.body.message,words.gitStatus)
       })
   }
 
