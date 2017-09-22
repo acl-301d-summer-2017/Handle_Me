@@ -6,6 +6,17 @@ const PORT = process.env.PORT || 4000;
 const app = express();
 const request = require('request');
 const bodyParser = require('body-parser');
+const pg = require('pg');
+
+
+
+const client = new pg.Client('postgres://localhost:5432/handle_me');
+client.connect();
+client.on('error', err => console.error(err));
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
+
 
 app.use(express.static('./public'));
 
@@ -55,7 +66,86 @@ function getGit (req, res){
   })
 }
 
+// checks if user already exists, creates one if not and returns id
+app.get('/login/', function (request, response) {
+  console.log ("im here",request.query.user_name)
+  client.query(
+    `Select * FROM users WHERE user_name = $1`,
+    [request.query.user_name]
+  )
+    .then(result => {
+      console.log("after select Query",result.rows)
+      if (result.rows.length === 0) {
+        console.log ("new")
+        client.query(
+          'INSERT INTO users(user_name) VALUES ($1)',
+          [request.query.user_name],
+        ) 
+          .then (function () {
+            client.query(
+              'SELECT user_id FROM users WHERE user_name = $1',
+              [request.query.user_name]
+            ).then(function (res) {
+              sendResults(response, {userid: res.rows[0].user_id})
+            })
+          })
+          
+          .catch(function(e){
+            console.log (e)
+          })
+      } else {
+        console.log (result.rows[0].user_id)
+        sendResults(response, {userid: result.rows[0].user_id})
+      }
 
-https://api.github.com/users/morganlacouture
+    })
+    .catch(function(e){
+      console.log (e)
+    })
+})
+
+app.post('/addFav', function (request, response) {
+  console.log(request.body)
+  console.log ( parseInt(request.body.user_id) )
+  client.query(
+    'INSERT INTO handles( users_id, handle_name) VALUES ($1, $2) ON CONFLICT DO NOTHING',
+    [parseInt(request.body.user_id), request.body.user_name]
+  )
+  .then(function (res) {
+    sendResults(response,{messege:'done'})
+  })
+})
+
+function sendResults (response,result){
+  response.send(result)
+
+}
+
+
+loadDBTables()
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}!`));
+
+
+
+
+
+///           DATABASE          ////
+
+function loadDBTables (){
+
+  client.query(`
+    CREATE TABLE IF NOT EXISTS
+      users(
+        user_id SERIAL PRIMARY KEY,
+        user_name VARCHAR(50) NOT NULL);
+  `)
+
+  client.query(`
+    CREATE TABLE IF NOT EXISTS
+      handles (
+        handle_id SERIAL PRIMARY KEY,
+        handle_name VARCHAR(200) NOT NULL,
+        users_id INTEGER NOT NULL REFERENCES users(user_id) );
+  `)
+} 

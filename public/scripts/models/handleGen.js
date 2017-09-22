@@ -17,10 +17,41 @@ var app = app || {};
   words.concatType = 'none';
 
   let values = [];
-  $('Form').submit(function () {
+
+
+
+  ////            DATABASE STUFF      ////
+  
+
+  $('#login').submit(function(){
+    event.preventDefault()
+    words.username = $('#login input').val();
+    console.log(words.username);
+    $.get('/login/', {user_name: words.username}) 
+  .then (function (data) {
+    console.log(data)
+    
+    words.userID = data.userid
+    console.log("words user id should be a number",typeof words.userID)
+    })
+  })
+
+
+  $('#addFav').click(function(){
+    event.preventDefault()
+    console.log(words.userID)
+  $.post('/addFav/', {user_id:words.userID, user_name: words.currentHandle }) 
+
+  })
+
+
+  ///           front end STUFF         ////
+  
+
+  $('#form').submit(function () {
     event.preventDefault()
     //For each form entry, push its value into values array
-    $.each($('Form').serializeArray(), function (i, field) {
+    $.each($('#form').serializeArray(), function (i, field) {
       values.push(field.value)
     })
 

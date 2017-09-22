@@ -17,13 +17,21 @@
 <body>
   <div>
   <!--          Survey Section          -->
+
+
+
   <section class="hide survey">
 
     <div id="handle-survey">Handle Me Survey<span class="exclaimCircle">!</span></div>
 
 
+    <form id = "login">
+      <label>First Name:</label>
+      <input type="text" name="firstname" placeholder="Optional"><br>
+    </form>
+
     <div id="survey-box">
-    <form>
+    <form id="form">
         <label>Chose your favorite topic: </label>
         <select name="Favorite Topic">
             <option value="" disabled selected>Select Your Option</option>
@@ -80,6 +88,10 @@
     <div class="buttons">
       <span id="re-roll">Re-Roll!</span>
       </div>
+
+    <div class="buttons">
+      <span id="addFav">addFav</span>
+    </div>
 
     <form>
       <label>Concatenation Options</label>
