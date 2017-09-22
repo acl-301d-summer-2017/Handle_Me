@@ -122,9 +122,9 @@ var app = app || {};
     $.get('/twit/' + words.currentHandle)
           .then ( function(data) {
             console.log(data)
-          words.twitStatus = JSON.parse(data.body).reason;
+          words.twitStatus = JSON.parse(data.body).valid;
           $('#checkTwit').text(words.twitStatus)
-          console.log('words.availability:',words.currentHandle,words.availability)
+          console.log('words.availability:',words.currentHandle,words.twitStatus)
        })
      }
 
