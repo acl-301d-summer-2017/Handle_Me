@@ -1,9 +1,14 @@
+html{
+    height: 100%;
+}
+
 body{
     text-align: center;
     margin: 0 auto; 
     font-family: "Roboto", sans-serif;
     color: #202121;
     box-shadow: inset 0 0 0 1000px rgba(0,0,0,.6);
+    height: 100%;
 }
 
 body::after {
@@ -35,18 +40,6 @@ h1{
     color: white;
 }
 
-.exclaimCircle {
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
-    padding: 10px;
-    background: #E21111;
-    border: 2px solid #E21111;
-    color: white;
-    text-align: center;
-    font: 64px "Anton", sans-serif;
-}
-
 label{
     font-size: 150%;
     padding: .5em;
@@ -69,4 +62,11 @@ footer{
     padding: 1rem;
     background-color: #efefef;
     text-align: center;
+}
+
+@media only screen (min-width: 360px and max-width: 736px);
+
+li{
+    color:white;
+    list-style-type: none;
 }

@@ -63,7 +63,7 @@ var app = app || {};
     });
 
     //Initiates the routes
-    page('/gen');
+    app.genControl.init();
   });
 
 
