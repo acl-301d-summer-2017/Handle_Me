@@ -51,6 +51,7 @@ var app = app || {};
   //Update currentHandle with current displayed handle
   genView.updateCurrentHandle = function () {
     app.words.currentHandle = '';
+    debugger
 
     //Append each slot element to current handle, based on value of concatType variable
     for (let i = 0; i < $('.slots').children().length; i++) {
