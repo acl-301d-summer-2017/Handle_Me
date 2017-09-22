@@ -23,8 +23,7 @@ var app = app || {};
   ////            DATABASE STUFF      ////
   
 
-  $('#login').submit(function(){
-    event.preventDefault()
+  $('#survey-submit').click(function(){
     words.username = $('#login input').val();
     console.log(words.username);
     $.get('/login/', {user_name: words.username}) 
@@ -41,6 +40,7 @@ var app = app || {};
     event.preventDefault()
     console.log(words.userID)
   $.post('/addFav/', {user_id:words.userID, user_name: words.currentHandle }) 
+  app.words.populateFaves()
 
   })
 
@@ -49,6 +49,7 @@ var app = app || {};
     $.get('/Faves/', {user_id:words.userID}) 
   .then (function (data) {
     console.log(data)
+    $('#faveDisplay').empty()
     data.forEach(function(value){
       $('#faveDisplay').append(`<span>${value.handle_name}</span>`)
     })
