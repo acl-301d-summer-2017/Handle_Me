@@ -187,13 +187,25 @@
     justify-content: column;
 }
 
+#about-kramm{
+    border: 1px solid red;
+    background-color: rgba(0, 0, 0, .75);
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 10%;
+    margin-top: 3%;
+}
+
 .about-box{
     background-color: rgba(0, 0, 0, .75);
     border: 1px double red;
-    padding: 15%;
-    height: 500%;
-    width: 55%;
-    margin: 0 auto;
+    padding: 5%; 
+}
+
+#about-p{
+    color: white;
+    font-size: 150%;
+    text-align: left;
 }
 
 .right{
