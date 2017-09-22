@@ -44,6 +44,18 @@ var app = app || {};
 
   })
 
+  words.populateFaves = function(){
+  
+    $.get('/Faves/', {user_id:words.userID}) 
+  .then (function (data) {
+    console.log(data)
+    data.forEach(function(value){
+      $('#faveDisplay').append(`<span>${value.handle_name}</span>`)
+    })
+    })
+  }
+  
+
 
   ///           front end STUFF         ////
   

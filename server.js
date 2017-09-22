@@ -116,6 +116,21 @@ app.post('/addFav', function (request, response) {
   })
 })
 
+
+
+app.get('/Faves', function (request, response) {
+  client.query(
+    `SELECT * FROM handles 
+    INNER JOIN users
+      ON users.user_id=handles.users_id
+      WHERE users.user_id = $1`,
+    [parseInt(request.query.user_id)]
+  )
+  .then(function (res) {
+    sendResults(response,res.rows)
+  })
+})
+
 function sendResults (response,result){
   response.send(result)
 
