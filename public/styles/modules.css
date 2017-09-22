@@ -39,6 +39,7 @@
 
 [data-saved="true"] {
     background-color: grey;
+    filter: brightness(50%);
 }
 
 #survey-submit{

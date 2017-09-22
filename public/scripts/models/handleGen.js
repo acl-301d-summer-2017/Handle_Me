@@ -13,6 +13,9 @@ var app = app || {};
   //Stores current handle as a concatinated string
   words.currentHandle = '';
 
+  //Option for concatination of final handle (app.words.currentHandle)
+  words.concatType = 'none';
+
   let values = [];
   $('Form').submit(function () {
     event.preventDefault()
@@ -29,7 +32,7 @@ var app = app || {};
     });
 
     //Initiates the routes
-    page('/gen');
+    app.genControl.init();
   });
 
 
