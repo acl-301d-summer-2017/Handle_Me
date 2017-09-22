@@ -71,7 +71,7 @@ app.get('/login/', function (request, response) {
       if (result.rows.length === 0) {
         client.query(
           'INSERT INTO users(user_name) VALUES ($1)',
-          [request.query.user_name],
+          [request.query.user_name]
         ) 
           .then (function () {
             client.query(
