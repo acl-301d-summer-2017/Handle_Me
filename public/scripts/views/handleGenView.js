@@ -85,7 +85,8 @@ var app = app || {};
   genView.populateSlots = function () {
     app.words.randomizeAll()
     genView.appendWords()
-    genView.appendSocial()
+    // TODO: Uncomment before presenting
+    // genView.appendSocial()
     app.words.populateFaves()
   }
 
