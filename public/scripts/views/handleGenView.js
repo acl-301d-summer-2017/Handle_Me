@@ -86,6 +86,8 @@ var app = app || {};
   genView.populateSlots = function () {
     app.words.randomizeAll()
     genView.appendWords()
+    genView.appendSocial()
+    app.words.populateFaves()
   }
 
   module.genView = genView
