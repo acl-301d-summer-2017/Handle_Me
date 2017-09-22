@@ -25,6 +25,10 @@
     width: 40%;
 }
 
+.availability-li{
+    margin-bottom: 2rem;
+}
+
 #concatOptions{
   margin-top:2rem;
   width:50%; 

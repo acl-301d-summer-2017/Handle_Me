@@ -52,7 +52,7 @@ var app = app || {};
   genView.updateCurrentHandle = function () {
     app.words.currentHandle = '';
 
-    //TODO: Add comments so this shit makes sense
+    //Append each slot element to current handle, based on value of concatType variable
     for (let i = 0; i < $('.slots').children().length; i++) {
       switch (app.words.concatType) {
         case 'camelCase':
