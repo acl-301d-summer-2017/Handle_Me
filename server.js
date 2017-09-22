@@ -86,7 +86,7 @@ app.get('/login/', function (request, response) {
               'SELECT user_id FROM users WHERE user_name = $1',
               [request.query.user_name]
             ).then(function (res) {
-              sendResults(res.rows[0].user_id)
+              sendResults(response, {userid: res.rows[0].user_id})
             })
           })
           
@@ -95,29 +95,32 @@ app.get('/login/', function (request, response) {
           })
       } else {
         console.log (result.rows[0].user_id)
-        sendResults(result.rows[0].user_id)
+        sendResults(response, {userid: result.rows[0].user_id})
       }
 
-      function sendResults (result){
-        response.send({id:result})
-    
-      }
     })
     .catch(function(e){
       console.log (e)
     })
 })
 
-// app.post('/addFav', function (request, response) {
-//   client.query(
-//     `INSERT INTO handles( user_id, handle_name) VALUES ($1, $2) ON CONFLICT DO NOTHING`
-//     [request.user_id, request.user_name]
-//   )
-//   .then(function (res) {
-//     console.log (sendResults(request.user_id, request.user_name))
-//     sendResults(request.user_id, request.user_name)
-//   })
-// })
+app.post('/addFav', function (request, response) {
+  console.log(request.body)
+  console.log ( parseInt(request.body.user_id) )
+  client.query(
+    'INSERT INTO handles( users_id, handle_name) VALUES ($1, $2) ON CONFLICT DO NOTHING',
+    [parseInt(request.body.user_id), request.body.user_name]
+  )
+  .then(function (res) {
+    sendResults(response,{messege:'done'})
+  })
+})
+
+function sendResults (response,result){
+  response.send(result)
+
+}
+
 
 loadDBTables()
 

@@ -31,22 +31,18 @@ var app = app || {};
   .then (function (data) {
     console.log(data)
     
-    words.userID = data.id} )
+    words.userID = data.userid
+    console.log("words user id should be a number",typeof words.userID)
+    })
   })
+
 
   $('#addFav').click(function(){
     event.preventDefault()
-  $.post('/addFav/', {user_id:words.userID, user_name: words.username }) 
-
-
+    console.log(words.userID)
+  $.post('/addFav/', {user_id:words.userID, user_name: words.currentHandle }) 
 
   })
-
- 
-
-  words.SaveFavorite= function (username,currentHandle){}
-
-
 
 
   ///           front end STUFF         ////
@@ -55,7 +51,7 @@ var app = app || {};
   $('#form').submit(function () {
     event.preventDefault()
     //For each form entry, push its value into values array
-    $.each($('Form').serializeArray(), function (i, field) {
+    $.each($('#form').serializeArray(), function (i, field) {
       values.push(field.value)
     })
 
