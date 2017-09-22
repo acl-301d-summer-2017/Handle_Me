@@ -37,7 +37,7 @@
     box-shadow: 0 0 85px grey;
 }
 
-span[data-saved="true"] {
+[data-saved="true"] {
     background-color: grey;
 }
 
