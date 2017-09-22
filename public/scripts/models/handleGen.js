@@ -51,7 +51,7 @@ var app = app || {};
     console.log(data)
     $('#faveDisplay').empty()
     data.forEach(function(value){
-      $('#faveDisplay').append(`<span>${value.handle_name}</span>`)
+      $('#faveDisplay').append(`<li>${value.handle_name}</li>`)
     })
     })
   }

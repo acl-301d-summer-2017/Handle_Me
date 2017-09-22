@@ -1,14 +1,28 @@
 @-webkit-keyframes typing { from { width: 0; } }
 /* @-webkit-keyframes blink-caret { 50% { border-color: transparent; } } */
 
-
+#flex-wrapper{
+    margin-top: 2rem;
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between;
+    
+}
 
 #faveDisplay{
-  color:red;
-  display: flex;
-  justify-content: space-between;
-  border: 1px solid black;
-  padding: 1rem;
+  font-size: 200%;
+  /* background-color:rgba(0, 0, 0, .75); */
+  color: white;
+  margin: 0 auto;
+  width: 40%;
+}
+
+#availability-box{
+    font-size: 200%;
+    /* background-color:rgba(0, 0, 0, .75); */
+    color: white;
+    margin: 0 auto;
+    width: 40%;
 }
 
 #concatOptions{
@@ -147,14 +161,6 @@
     font-size: 2.5em;
 }
 
-#availability-box{
-    font-size: 200%;
-    border: 2px solid white;
-    background-color:rgba(0, 0, 0, .75);
-    color: white;
-    margin: 0 auto;
-    width: 40%;
-}
 
 #conCatName{
     margin-top: 7%;
