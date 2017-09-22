@@ -5,14 +5,15 @@ body{
     font-family: "Roboto", sans-serif;
     color: #202121;
     background-image: url(/vendor/images/bg.jpg); 
+    background-attachment: fixed;
     background-repeat: none;
     background-size: cover;
     background-position: 40% 0;
 }
 
 #shadow {
-    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.78);
-    width: 100%;
+    box-shadow: inset 0 0 0 10000px rgba(0,0,0,.78);
+    /* width: 100%; */
     height: 100%;
     opacity : 1;
     z-index: 1;
