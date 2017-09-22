@@ -6,6 +6,13 @@ var check = function (handle){
   app.genView.appendSocial();
 }
 
+$(document).keypress(function(e) {
+  if(e.which == 13) {
+    let name = prompt("Enter a Username");
+    check(name);
+  }
+});
+
 var app = app || {};
 
 (function (module){
