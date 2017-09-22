@@ -13,6 +13,9 @@
 
 #concatOptions{
   margin-top:2rem;
+  width:50%; 
+  margin:auto; 
+  margin-top:50px;
 }
 
 
@@ -57,7 +60,7 @@
 }
 
 #yourHandle {
-    font-size: 600%;
+    font-size: 510%;
 }
 
 .slots{

@@ -75,6 +75,7 @@ var app = app || {};
     });
 
     //Initiates the routes
+    // page('/gen/'); Will make back button work but will break refresh
     app.genControl.init();
   });
 
