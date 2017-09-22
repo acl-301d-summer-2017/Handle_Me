@@ -9,9 +9,12 @@
     
 }
 
+#top-margin{
+    padding-top:25px;
+}
+
 #faveDisplay{
   font-size: 200%;
-  /* background-color:rgba(0, 0, 0, .75); */
   color: white;
   margin: 0 auto;
   width: 40%;
@@ -19,7 +22,6 @@
 
 #availability-box{
     font-size: 200%;
-    /* background-color:rgba(0, 0, 0, .75); */
     color: white;
     margin: 0 auto;
     width: 40%;
@@ -51,8 +53,6 @@
 
 #exclaimCircle {
     border-radius: 50%;
-    /* width: 100px;
-    height: 100px; */
     padding: 10px;
     margin-left:0.5rem;
     background: #E21111;
@@ -78,6 +78,7 @@
 }
 
 #yourHandle {
+    padding-top:25px;
     margin-top:25px;
     font-size: 510%;
 }
