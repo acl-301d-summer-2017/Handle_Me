@@ -1,5 +1,4 @@
 
-
 body{
     text-align: center; 
     font-family: "Roboto", sans-serif;
@@ -16,7 +15,7 @@ body{
     overflow: hidden;
 }
 
-#shadow {
+#shadow{
     box-shadow: inset 0 0 0 10000px rgba(0,0,0,.78);
     /* width: 100%; */
     height: 39999px;
@@ -67,4 +66,4 @@ li{
     list-style-type: none;
 }
 
-@media only screen (min-width: 360px and max-width: 736px);
+/* @media only screen (min-width: 360px and max-width: 736px); */

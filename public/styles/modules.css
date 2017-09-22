@@ -38,7 +38,6 @@
   margin-top:50px;
 }
 
-
 .generator{
   height:100%;
   margin-bottom:5rem;
@@ -49,7 +48,6 @@
     display: inline;
     padding: 0px 25px 0px 25px;
 }
-
 
 #exclaimCircle {
     border-radius: 50%;
@@ -166,7 +164,6 @@
     cursor: pointer;
     font-size: 2.5em;
 }
-
 
 #conCatName{
     margin-top: 7%;
