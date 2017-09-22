@@ -24,7 +24,9 @@
 	-webkit-animation: typing 2s steps(14, end), blink-caret .5s step-end infinite alternate;
     font-size: 600%;
     margin: 0 auto;
+    margin-bottom: 4%;
     padding-bottom: 2%;
+    padding-top: 10%;
 }
 
 #yourHandle {
@@ -53,14 +55,20 @@
 }
 
 #slot1, #slot2, #slot3{
-    /* border: 1px solid red; */
+    border-left: 1px solid red;
+    border-right: 1px solid red;
     background-color: rgba(0, 0, 0, .75);
     padding: 1%;
     color: white;
 }
 
 #slot1:hover, #slot2:hover, #slot3:hover{
-    box-shadow: 4px 4px 4px rgba(0,0,0,.5);
+    box-shadow: 0 0 85px grey;
+}
+
+[data-saved="true"] {
+    background-color: grey;
+    filter: brightness(50%);
 }
 
 #survey-submit{
@@ -68,23 +76,28 @@
     width: 50%;
     margin: 0 auto;
     box-shadow: 10px 5px 5px rgba(0,0,0,.5);
-    /* box-shadow: 10px 5px 5px rgba(235, 8, 8, 0.5); */
 }
 
 #survey-box{
     border: 1px solid lightgray;
     background-color: rgba(0, 0, 0, 0.75);
+    margin-bottom: 2%;
+}
+
+#survey-box{
+    background-color: rgba(0, 0, 0, .75);
     margin: 0 auto;
     width :50%;
     padding: 2%;
 }
 
+#bottom-select{
+    margin-bottom: 5%;
+}
+
 #handle-div{
     background-color:white;
 }
-/* #gen-box{
-    background-color: black;
-} */
 
 
 #re-roll{
@@ -127,13 +140,22 @@
     margin: 0 auto;
     margin-bottom: 10%;
     margin-top: 3%;
+    justify-content: column;
 }
 
-#about-box{
+.about-box{
     background-color: rgba(0, 0, 0, .75);
     border: 1px double red;
     padding: 15%;
     height: 500%;
     width: 55%;
     margin: 0 auto;
+}
+
+.right{
+    float: right;
+}
+
+.left{
+    float:left;
 }

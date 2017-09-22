@@ -1,5 +1,5 @@
-html, body {
-    overflow-x: hidden;
+html{
+    height: 100%;
 }
 
 body{
@@ -8,6 +8,7 @@ body{
     font-family: "Roboto", sans-serif;
     color: #202121;
     box-shadow: inset 0 0 0 1000px rgba(0,0,0,.6);
+    height: 100%;
 }
 
 body::after {
@@ -65,4 +66,7 @@ footer{
 
 @media only screen (min-width: 360px and max-width: 736px);
 
-
+li{
+    color:white;
+    list-style-type: none;
+}
