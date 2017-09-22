@@ -40,18 +40,6 @@ h1{
     color: white;
 }
 
-.exclaimCircle {
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
-    padding: 10px;
-    background: #E21111;
-    border: 2px solid #E21111;
-    color: white;
-    text-align: center;
-    font: 64px "Anton", sans-serif;
-}
-
 label{
     font-size: 150%;
     padding: .5em;
@@ -75,6 +63,8 @@ footer{
     background-color: #efefef;
     text-align: center;
 }
+
+@media only screen (min-width: 360px and max-width: 736px);
 
 li{
     color:white;

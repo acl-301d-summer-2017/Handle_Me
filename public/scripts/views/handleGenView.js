@@ -13,6 +13,7 @@ var app = app || {};
   }
 
   genView.init = function (){ 
+
     $('.generator').show().siblings().hide();
     genView.populateSlots();
   };
