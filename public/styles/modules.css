@@ -162,7 +162,7 @@
 }
 
 .login-submit {
-    width:1px;
+    box-sizing: border-box;
 }
 
 #about-kramm{
