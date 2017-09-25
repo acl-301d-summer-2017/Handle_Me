@@ -1,4 +1,4 @@
-@-webkit-keyframes typing { from { width: 0; } }
+/* @-webkit-keyframes typing { from { width: 0; } } */
 /* @-webkit-keyframes blink-caret { 50% { border-color: transparent; } } */
 
 #flex-wrapper{
@@ -206,12 +206,4 @@
     color: white;
     font-size: 150%;
     text-align: left;
-}
-
-.right{
-    float: right;
-}
-
-.left{
-    float:left;
 }
