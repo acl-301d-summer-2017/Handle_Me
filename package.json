@@ -17,6 +17,9 @@
   },
   "homepage": "https://github.com/TEAM-KRaMM/Handle_Me#readme",
   "dependencies": {
-    "express": "^4.15.4"
+    "body-parser": "^1.18.1",
+    "express": "^4.15.4",
+    "pg": "^7.3.0",
+    "request": "^2.81.0"
   }
 }
